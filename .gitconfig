@@ -7,6 +7,9 @@
 	editor = subl -w
 	# pager = less -x2
 
+[push]
+	default = simple
+
 # [alias]
 # 	st = status
 # 	co = checkout
@@ -19,5 +22,3 @@
 # 	# for diff
 # 	di = diff
 # 	ds = diff --staged
-# [push]
-# 	default = simple
