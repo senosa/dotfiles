@@ -1,0 +1,23 @@
+[user]
+	name = Sensuke Osawa
+	email = senosa@gmail.com
+[color]
+	ui = auto
+[core]
+	editor = subl -w
+	# pager = less -x2
+
+# [alias]
+# 	st = status
+# 	co = checkout
+# 	ci = commit
+# 	br = branch
+# 	# for log
+# 	lo = log --pretty='%Cgreen%h%Creset %s %Cred%d%Creset'
+# 	lp = log -p --stat
+# 	lg = log --graph --oneline --decorate
+# 	# for diff
+# 	di = diff
+# 	ds = diff --staged
+# [push]
+# 	default = simple
