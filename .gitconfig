@@ -6,10 +6,12 @@
 [core]
 	editor = subl -w
 	# pager = less -x2
-
 [push]
 	default = simple
-
+[merge]
+	ff = false
+[pull]
+	rebase = true
 # [alias]
 # 	st = status
 # 	co = checkout
