@@ -10,8 +10,8 @@
 	default = simple
 [merge]
 	ff = false
-[pull]
-	rebase = true
+# [pull]
+# 	rebase = true
 # [alias]
 # 	st = status
 # 	co = checkout
