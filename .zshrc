@@ -125,6 +125,29 @@ log
 ## ^Dでログアウトしないようにする。
 setopt ignore_eof
 
+# ページャの設定
+## lvを優先する。
+if type lv > /dev/null 2>&1; then
+    export PAGER="lv"
+else
+    export PAGER="less"
+fi
+
+# lvの設定
+## -c: ANSIエスケープシーケンスの色付けなどを有効にする。
+## -l: 行が折り返されていても1行として扱い、コピーしたときに改行を入れない。
+export LV="-c -l"
+
+if [ "$PAGER" != "lv" ]; then
+    alias lv="$PAGER"
+fi
+
+# lessの設定
+## -R: ANSIエスケープシーケンスのみ素通しする。
+## -X: 出力結果を画面に残す
+## -F: 1画面に収まるなら終了する
+export LESS="-RXF"
+
 # alias
 ## ページャーを使いやすくする。
 ### grep -r def *.rb L -> grep -r def *.rb |& lv

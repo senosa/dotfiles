@@ -56,31 +56,3 @@ manpath=(# 自分用
          # システム用
          /usr/local/share/man(N-/)
          /usr/share/man(N-/))
-
-# ページャの設定
-if type lv > /dev/null 2>&1; then
-    ## lvを優先する。
-    export PAGER="lv"
-else
-    ## lvがなかったらlessを使う。
-    export PAGER="less"
-fi
-
-# lvの設定
-## -c: ANSIエスケープシーケンスの色付けなどを有効にする。
-## -l: 1行が長くと折り返されていても1行として扱う。
-##     （コピーしたときに余計な改行を入れない。）
-export LV="-c -l"
-
-if [ "$PAGER" != "lv" ]; then
-    ## lvがなくてもlvでページャーを起動する。
-    alias lv="$PAGER"
-fi
-
-# lessの設定
-## -R: ANSIエスケープシーケンスのみ素通しする。
-## 2012-09-04
-## -X: 出力結果を画面に残す
-## -F: 1画面に収まるなら終了する
-## 2012-12-08
-export LESS="-RXF"
