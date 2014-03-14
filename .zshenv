@@ -7,43 +7,20 @@ typeset -U path
 ##            N: NULL_GLOBオプションを設定。globがマッチしなかったり存在しないパスを無視する。
 ##            -: シンボリックリンク先のパスを評価。
 ##            /: ディレクトリのみ残す。
-# path=(
-#       # 自分用（--prefix=$HOME/localでインストールしたもの）
-#       $HOME/local/bin(N-/)
-#       # 自分用（gem install --user-installでインストールしたもの）
-#       $HOME/.gem/ruby/*/bin(N-/)
-#       # システム用
-#       /usr/local/bin(N-/)
-#       /usr/bin(N-/)
-#       /usr/games(N-/)
-#       /bin(N-/)
-#       )
-
-path=(# システム用
-      # TS-110
-      /opt/bin(N-/)
-      /bin(N-/)
+path=(
       # 自分用（--prefix=$HOME/localでインストールしたもの）
       $HOME/local/bin(N-/)
       # 自分用（gem install --user-installでインストールしたもの）
-      ## 2012-01-07
       $HOME/.gem/ruby/*/bin(N-/)
       # rbenv用
-      ## 2012-02-21
       $HOME/.rbenv/bin(N-/)
       # Debian GNU/Linux用
       /var/lib/gems/*/bin(N-/)
-      # MacPorts用
-      /opt/local/bin(N-/)
-      # Solaris用
-      /opt/csw/bin(N-/)
-      /usr/sfw/bin(N-/)
-      /usr/ccs/bin(N-/)
-      # Cygwin用
-      /cygdrive/c/meadow/bin(N-/)
       # システム用
       /usr/local/bin(N-/)
       /usr/bin(N-/)
+      /sbin(N-/)
+      /bin(N-/)
       /usr/games(N-/))
 
 # sudo時のパスの設定
