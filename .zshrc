@@ -140,26 +140,6 @@ alias mv="mv -i"
 ## exitのショートカット。
 alias x="exit"
 
-# パスの設定
-## 重複したパスを登録しない。
-typeset -U path
-## (N-/): 存在しないディレクトリは登録しない。
-##    パス(...): ...という条件にマッチするパスのみ残す。
-##            N: NULL_GLOBオプションを設定。globがマッチしなかったり存在しないパスを無視する。
-##            -: シンボリックリンク先のパスを評価。
-##            /: ディレクトリのみ残す。
-path=(
-      # 自分用（--prefix=$HOME/localでインストールしたもの）
-      $HOME/local/bin(N-/)
-      # 自分用（gem install --user-installでインストールしたもの）
-      $HOME/.gem/ruby/*/bin(N-/)
-      # システム用
-      /usr/local/bin(N-/)
-      /usr/bin(N-/)
-      /usr/games(N-/)
-      /bin(N-/)
-      )
-
 # rbenv
 # Add rbenv init to your shell to enable shims and autocompletion.
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
