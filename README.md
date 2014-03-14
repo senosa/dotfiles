@@ -4,12 +4,13 @@
 ```sh
 mkdir ~/src
 cd ~/src
-git clone git@github.com:senosa/dotfiles.git .
-git submodule init
-git submodule update
-
-# 既に.zshrcがあるなら退避
-mv ~/.zshrc{,.orig}
+git clone --recursive git@github.com:senosa/dotfiles.git
+# --reursiveオプションは
+# git submodule init
+# git submodule update
+# と同じ
 
 ln -s ~/src/dotfiles/.zshrc ~
+ln -s ~/src/dotfiles/.zshenv ~
+ln -s ~/src/dotfiles/.tmux.conf ~
 ```
