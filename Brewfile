@@ -9,6 +9,7 @@ tap 'homebrew/dupes'
 install git
 install zsh
 install tmux
+install reattach-to-user-namespace
 install rbenv
 install ruby-build
 install tree
