@@ -8,8 +8,8 @@
 	# pager = less -x2
 [push]
 	default = simple
-[merge]
-	ff = false
+# [merge]
+# 	ff = false
 # [pull]
 # 	rebase = true
 # [alias]
