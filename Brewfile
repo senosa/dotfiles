@@ -22,3 +22,5 @@ install brew-cask
 
 cask install vagrant
 cask install virtualbox
+
+cleanup
