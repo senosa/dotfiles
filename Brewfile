@@ -6,6 +6,7 @@ tap 'homebrew/binary'
 tap 'homebrew/dupes'
 
 # Packages
+install ansible
 install git
 install rbenv
 install reattach-to-user-namespace
