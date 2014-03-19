@@ -12,9 +12,7 @@ git clone --recursive git@github.com:senosa/dotfiles.git
 # git submodule update
 # と同じ
 
-ln -s ~/src/dotfiles/.zshrc ~
-ln -s ~/src/dotfiles/.zshenv ~
-ln -s ~/src/dotfiles/.tmux.conf ~
+rake
 ```
 
 ## An end goal
