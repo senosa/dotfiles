@@ -7,12 +7,12 @@ tap 'homebrew/dupes'
 
 # Packages
 install git
-install zsh
-install tmux
-install reattach-to-user-namespace
 install rbenv
+install reattach-to-user-namespace
 install ruby-build
+install tmux
 install tree
+install zsh
 
 # Casks
 tap 'phinze/cask'
