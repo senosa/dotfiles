@@ -9,6 +9,7 @@ tap 'homebrew/dupes'
 install ansible
 install git
 install rbenv
+install rbenv-default-gems
 install reattach-to-user-namespace
 install ruby-build
 install tmux
