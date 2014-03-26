@@ -68,6 +68,9 @@ source $ZSH/oh-my-zsh.sh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # -------------------------------------------------------------------------
+# 文字コード
+export LANG=ja_JP.UTF-8
+
 # キーバインド
 ## Emacsキーバインドを使う。
 bindkey -e
