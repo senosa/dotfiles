@@ -5,6 +5,7 @@
 	ui = auto
 [core]
 	editor = subl -w
+	excludesfile = /Users/sen/.gitignore_global
 	# pager = less -x2
 [push]
 	default = simple
