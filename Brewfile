@@ -12,6 +12,7 @@ install rbenv
 install rbenv-default-gems
 install reattach-to-user-namespace
 install ruby-build
+install tig
 install tmux
 install tree
 install zsh
