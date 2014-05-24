@@ -1,0 +1,5 @@
+# status viewからcommitするときにdiffを表示する
+bind status C !git commit -v
+
+# merge commitでもdiffを表示する
+set diff-options = -m --first-parent
