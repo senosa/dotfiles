@@ -70,7 +70,6 @@ source $ZSH/oh-my-zsh.sh
 # -------------------------------------------------------------------------
 # 文字コード
 export LANG=ja_JP.UTF-8
-export LC_CTYPE="ja_JP.UTF-8"
 
 # キーバインド
 ## Emacsキーバインドを使う。
