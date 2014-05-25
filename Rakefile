@@ -4,7 +4,7 @@ require 'pathname'
 task 'default' => ['show', 'unlink', 'symlink']
 
 HOME = Pathname.new(ENV['HOME'])
-IGNORED_DOTFILES = ['.git', '.gitmodules']
+IGNORED_DOTFILES = ['.git', '.gitmodules', '.DS_Store']
 DOTFILES_SRCS = FileList['.[^.]*'].exclude(*IGNORED_DOTFILES)
 
 dotfiles =[]
@@ -22,13 +22,23 @@ end
 desc 'symlinkを消す'
 task 'unlink' do
   dotfiles.each do |file|
-    HOME.expand_path.join(file.basename).unlink
+    if HOME.expand_path.join(file.basename).exist?
+      HOME.expand_path.join(file.basename).unlink
+      puts "delete link #{file.basename}"
+    else
+      puts "#{file.basename} non-exist"
+    end
   end
 end
 
 desc 'symlinkを作る'
 task 'symlink' do
   dotfiles.each do |file|
-    HOME.expand_path.join(file.basename).make_symlink(file.expand_path)
+    if HOME.expand_path.join(file.basename).exist?
+      puts "#{file.basename} already exist"
+    else
+      HOME.expand_path.join(file.basename).make_symlink(file.expand_path)
+      puts "make link #{file.basename}"
+    end
   end
 end
