@@ -4,8 +4,8 @@ bind status C !git commit -v
 # merge commitでもdiffを表示する
 set diff-options = -m --first-parent
 
-# cursor行の文字色を黒にする
-color cursor black green
+# cursor行の背景色を solarized#base01
+color cursor default color240
 
 # current viewのタイトルバーの文字色を黒にする	
 color title-focus black blue
