@@ -11,5 +11,5 @@ set main-view = line-number:no,interval=5 id:no date:local author:abbreviated \
 # cursor行の背景色を solarized#base01
 color cursor default color240
 
-# current viewのタイトルバーの文字色を黒にする	
+# current viewのタイトルバーの文字色を黒にする
 color title-focus black blue
