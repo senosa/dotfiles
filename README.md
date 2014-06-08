@@ -4,15 +4,12 @@ This repository is optimized for me. You can clone or fork them freely, but I do
 ## Usage
 
 ```sh
-mkdir ~/src
-cd ~/src
-git clone --recursive git@github.com:senosa/dotfiles.git
-# --reursiveオプションは
-# git submodule init
-# git submodule update
-# と同じ
-
-rake
+cd
+git clone git@github.com:senosa/oh-my-zsh.git .oh-my-zsh
+cd ~/path/to/like
+git clone git@github.com:senosa/dotfiles.git
+cd dotfiles
+rake symlink
 ```
 
 ## An end goal
