@@ -8,8 +8,8 @@ set diff-options = -m --first-parent
 set main-view = line-number:no,interval=5 id:no date:local author:abbreviated \
   commit-title:graph=yes,refs=yes
 
-# cursor行の背景色を solarized#base01
-color cursor default color240
+# cursor行の色 文字orange 背景solarize#base02を一つだけ明るく
+color cursor color166 color236
 
 # current viewのタイトルバーの文字色を黒にする
 color title-focus black blue
