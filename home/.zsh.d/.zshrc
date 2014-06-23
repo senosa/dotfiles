@@ -79,6 +79,9 @@ zstyle ':completion:*' list-colors di=36
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' format $'%{\e[34m%}%U%d%u%{\e[m%}'
 
+if [ -d ${HOME}/.rbenv ]; then
+  source /usr/local/opt/rbenv/completions/rbenv.zsh
+fi
 # ------------------------------------------------------- globbing
 # 辞書順ではなく数字順に並べる
 setopt numeric_glob_sort
@@ -103,8 +106,3 @@ alias -g L='|& $PAGER'
 alias -g G='| grep'
 alias -g T='| tail'
 alias -g H='| head'
-
-
-# rbenv
-# Add rbenv init to your shell to enable shims and autocompletion.
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
