@@ -5,7 +5,12 @@ ZSH_THEME='snest'
 DISABLE_AUTO_UPDATE='true'
 DISABLE_AUTO_TITLE='true'
 HIST_STAMPS='yyyy-mm-dd'
-plugins=(bundler git vagrant)
+plugins=(
+  bundler
+  git
+  rbenv
+  vagrant
+)
 HISTFILE=$ZDOTDIR/history
 source $ZSH/oh-my-zsh.sh
 # ------------------------------------------------------- main
@@ -79,9 +84,6 @@ zstyle ':completion:*' list-colors di=36
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' format $'%{\e[34m%}%U%d%u%{\e[m%}'
 
-if [ -d ${HOME}/.rbenv ]; then
-  source /usr/local/opt/rbenv/completions/rbenv.zsh
-fi
 # ------------------------------------------------------- globbing
 # 辞書順ではなく数字順に並べる
 setopt numeric_glob_sort
