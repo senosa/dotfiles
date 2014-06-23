@@ -4,24 +4,6 @@
 [color]
 	ui = auto
 [core]
-	editor = subl -w
 	excludesfile = /Users/sen/.gitignore
-	# pager = less -x2
 [push]
 	default = simple
-# [merge]
-# 	ff = false
-# [pull]
-# 	rebase = true
-# [alias]
-# 	st = status
-# 	co = checkout
-# 	ci = commit
-# 	br = branch
-# 	# for log
-# 	lo = log --pretty='%Cgreen%h%Creset %s %Cred%d%Creset'
-# 	lp = log -p --stat
-# 	lg = log --graph --oneline --decorate
-# 	# for diff
-# 	di = diff
-# 	ds = diff --staged

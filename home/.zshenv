@@ -9,3 +9,5 @@ path=(
   /sbin(N-/)
   /usr/games(N-/)
 )
+
+export ZDOTDIR=$HOME/.zsh.d
