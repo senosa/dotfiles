@@ -50,7 +50,7 @@ case $OSTYPE in
     export EDITOR='subl -w'
     ;;
   linux*)
-    export EDItOR='vim'
+    export EDITOR='vim'
     ;;
 esac
 
