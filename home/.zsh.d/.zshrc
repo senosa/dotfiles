@@ -6,6 +6,7 @@ DISABLE_AUTO_UPDATE='true'
 DISABLE_AUTO_TITLE='true'
 HIST_STAMPS='yyyy-mm-dd'
 plugins=(bundler git vagrant)
+HISTFILE=$ZDOTDIR/history
 source $ZSH/oh-my-zsh.sh
 # ------------------------------------------------------- main
 export LANG=ja_JP.UTF-8
@@ -57,7 +58,6 @@ cdpath=(~)
 # ------------------------------------------------------- history
 HISTSIZE=10000000
 SAVEHIST=$HISTSIZE
-HISTFILE=$ZDOTDIR/history
 # 重複を削除
 setopt hist_ignore_all_dups
 setopt hist_save_no_dups
