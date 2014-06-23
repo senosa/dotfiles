@@ -108,6 +108,3 @@ alias -g H='| head'
 # rbenv
 # Add rbenv init to your shell to enable shims and autocompletion.
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
