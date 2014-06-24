@@ -9,6 +9,7 @@ plugins=(
   bundler
   git
   rbenv
+  tmux
   vagrant
 )
 HISTFILE=$ZDOTDIR/history
