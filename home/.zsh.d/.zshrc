@@ -6,6 +6,8 @@ DISABLE_AUTO_UPDATE='true'
 DISABLE_AUTO_TITLE='true'
 HIST_STAMPS='yyyy-mm-dd'
 plugins=(
+  brew
+  brew-cask
   bundler
   git
   rbenv
