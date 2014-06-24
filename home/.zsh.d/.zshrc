@@ -25,6 +25,13 @@ alias x='exit'
 # 3秒以上かかったプロセスの消費時間を表示
 REPORTTIME=3
 
+# dircolors
+if [ -f ~/.dircolors ]; then
+  if type dircolors > /dev/null 2>&1; then
+    eval $(dircolors ~/.dircolors)
+  fi
+fi
+
 # ------------------------------------------------------- pager
 export PAGER='less'
 ## $LESSのオプションは常に有効(manとかgit logとか)
@@ -79,7 +86,7 @@ bindkey -M menuselect '^P' up-line-or-history
 bindkey -M menuselect '^N' down-line-or-history
 
 # ------------------------------------------------------- completion
-zstyle ':completion:*' list-colors di=36
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # 5.5.4 補完のグループ化 p147
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' format $'%{\e[34m%}%U%d%u%{\e[m%}'
