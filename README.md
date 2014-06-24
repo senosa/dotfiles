@@ -6,12 +6,12 @@ This repository is optimized for me. You can clone or fork them freely, but I do
 ```sh
 cd
 git clone git@github.com:senosa/oh-my-zsh.git .oh-my-zsh
-cd ~/path/to/like
-git clone git@github.com:senosa/dotfiles.git
-cd dotfiles
-rake symlink
+
+gem install homesick
+homesick clone senosa/dotfiles
+homesick link
 ```
 
 ## An end goal
-* `git clone`, `rake setup`ですべて完了すること
+* 自動化されていること
 * 汎用的であること
