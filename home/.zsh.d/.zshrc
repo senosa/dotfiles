@@ -36,7 +36,7 @@ export PAGER='less'
 ## -X  : --no-init
 export LESS='-Fij3Rx2X'
 ## src-hilite-lesspipe.shがあれば使う
-if [ -x src-hilite-lesspipe.sh ]; then
+if [ -x $(where src-hilite-lesspipe.sh) ]; then
   export LESSOPEN="| $(where src-hilite-lesspipe.sh) %s"
 fi
 ## 自分で起動する時
