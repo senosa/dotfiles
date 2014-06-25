@@ -57,7 +57,7 @@ alias less='less -MN'
 # ------------------------------------------------------- editor
 case $OSTYPE in
   darwin*)
-    export EDITOR='subl -w'
+    export EDITOR='reattach-to-user-namespace subl -w'
     ;;
   linux*)
     export EDITOR='vim'
