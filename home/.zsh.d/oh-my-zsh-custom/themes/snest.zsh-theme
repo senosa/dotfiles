@@ -27,8 +27,8 @@ PROMPT2=$(str_with_color white black '> ')
 if [ -n "${REMOTEHOST}${SSH_CONNECTION}" ]
 then
   USER_NAME=$(str_with_color black green '%n')
-  SEPARATOR2=$(str_with_color black white '@')
-  SEPARATOR3=$(str_with_color black white ':')
+  SEPARATOR2=$(str_with_color black green '@')
+  SEPARATOR3=$(str_with_color black cyan ':')
   HOST_NAME=$(str_with_color black cyan '%m')
 
   PROMPT='${DATE_TIME}${USER_NAME}${SEPARATOR2}${HOST_NAME}${SEPARATOR3}${CURRENT_DIRECTORY} $(my_git_status)
