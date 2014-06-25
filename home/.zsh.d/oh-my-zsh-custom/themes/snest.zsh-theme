@@ -20,7 +20,7 @@ DATE_TIME=$'\e[92;7m[%D{%Y-%m-%d %K:%M]}\e[27m'
 CURRENT_DIRECTORY=$(str_with_color green default '%~')
 PROMPT_CHAR=$(str_with_color default default '$ ')
 
-PROMPT='${DATE_TIME}${CURRENT_DIRECTORY} $(my_git_status)
+PROMPT='${DATE_TIME} ${CURRENT_DIRECTORY} $(my_git_status)
 $PROMPT_CHAR'
 PROMPT2=$(str_with_color white black '> ')
 
@@ -29,6 +29,6 @@ then
   USER_NAME=$(str_with_color black green '%n')
   HOST_NAME=$(str_with_color black cyan '@%m')
 
-  PROMPT='${DATE_TIME}${USER_NAME}${HOST_NAME}${CURRENT_DIRECTORY} $(my_git_status)
+  PROMPT='${DATE_TIME}${USER_NAME}${HOST_NAME} ${CURRENT_DIRECTORY} $(my_git_status)
 $PROMPT_CHAR'
 fi
