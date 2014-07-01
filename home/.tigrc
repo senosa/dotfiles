@@ -10,6 +10,9 @@ set main-view = line-number:no,interval=5 id:no date:local author:abbreviated \
 
 # cursor行の色 文字orange 背景solarized#base02
 color cursor color009 color000
+# tab-size
+set tab-size = 2
+
 
 # background viewのタイトルバーの背景はsolarized#base01
 color title-blur color008 color010
