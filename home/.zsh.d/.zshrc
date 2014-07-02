@@ -120,3 +120,5 @@ alias -g L='|& $PAGER'
 alias -g G='| grep'
 alias -g T='| tail'
 alias -g H='| head'
+
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
