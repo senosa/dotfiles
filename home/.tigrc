@@ -11,6 +11,9 @@ set main-view = line-number:no,interval=5 id:no date:local author:abbreviated \
 # tab-size
 set tab-size = 2
 
+# statusの色  文字:yellow
+color status color003 default
+
 # cursor行の色 文字:yellow 背景:solarized#base02
 color cursor color003 color000
 
