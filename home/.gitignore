@@ -14,3 +14,6 @@ Icon
 .Trashes
 
 *~
+
+# Environment normalisation
+/vendor/bundle
