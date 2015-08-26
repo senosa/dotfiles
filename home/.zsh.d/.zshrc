@@ -121,4 +121,7 @@ alias -g G='| grep'
 alias -g T='| tail'
 alias -g H='| head'
 
+# ------------------------------------------------------- homebrew
+# brew cask install で /Applications にインストールする
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
