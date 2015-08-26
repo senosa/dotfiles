@@ -36,10 +36,9 @@ brew doctor
 # ansible
 brew install ansible
 
-# clone
-git clone https://github.com/senosa/dotfiles.git
-
-# run (with -vv if you want)
+# clone and run (with -vv if you want)
+git clone https://github.com/senosa/dotfiles.git ~/dotfiles
+cd ~/dotfiles
 HOMEBREW_CASK_OPTS="--appdir=/Applications" ansible-playbook -i hosts mac.yml
 ```
 
