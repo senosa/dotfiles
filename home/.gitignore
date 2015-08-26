@@ -17,3 +17,7 @@ Icon
 
 # Environment normalisation
 /vendor/bundle
+
+# My temporary directory and files
+,/
+,*
