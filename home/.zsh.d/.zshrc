@@ -125,3 +125,6 @@ alias -g H='| head'
 # brew cask install で /Applications にインストールする
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# ------------------------------------------------------- go
+export GOPATH=$HOME
+export PATH=$PATH:$GOPATH/bin
