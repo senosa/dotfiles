@@ -7,3 +7,5 @@
 	excludesfile = /Users/sen/.gitignore
 [push]
 	default = simple
+[ghq]
+	root = ~/src
