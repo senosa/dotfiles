@@ -1,9 +1,10 @@
 Dotfiles
-========================================
+================================================================
 
 Ansibleを使ってMacの環境構築を自動化する。
 
-## Description
+Description
+----------------------------------------------------------------
 
 このPlaybookが実行すること。
 
@@ -17,13 +18,16 @@ Ansibleを使ってMacの環境構築を自動化する。
   - Atomパッケージのインストール
   - Mackupリストア (after Dropbox sync)
 
-## Requirement
+Requirement
+----------------------------------------------------------------
 
 - Xcode
 - homebrew
 - ansible
 
-## Usage
+Usage
+----------------------------------------------------------------
+
 
 ```bash
 # Xcode
@@ -42,6 +46,7 @@ cd ~/dotfiles
 HOMEBREW_CASK_OPTS="--appdir=/Applications" ansible-playbook -i hosts mac.yml
 ```
 
-## Licence
+Licence
+----------------------------------------------------------------
 
 MIT
