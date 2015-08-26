@@ -1,17 +1,48 @@
-# My dotfiles
-This repository is optimized for me. You can clone or fork them freely, but I don't guarantee that they fit you.
+Dotfiles
+========================================
+
+Ansibleを使ってMacの環境構築を自動化する。
+
+## Description
+
+このPlaybookが実行すること。
+
+- homebrewパッケージのインストール
+- homebrew caskパッケージのインストール
+- (WIP)
+  - dotfilesリポジトリのcloneとsymlink作成
+  - デフォルトシェルをzshに変更
+  - defaultsコマンドでosxの環境設定
+  - 最新安定版のrubyをrbenvでインストール
+  - Atomパッケージのインストール
+  - Mackupリストア (after Dropbox sync)
+
+## Requirement
+
+- Xcode
+- homebrew
+- ansible
 
 ## Usage
 
-```sh
-cd
-git clone git@github.com:senosa/oh-my-zsh.git .oh-my-zsh
+```bash
+# Xcode
+sudo xcodebuild -license
 
-gem install homesick
-homesick clone senosa/dotfiles
-homesick link
+# homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew doctor
+
+# ansible
+brew install ansible
+
+# clone
+git clone https://github.com/senosa/dotfiles.git
+
+# run (with -vv if you want)
+HOMEBREW_CASK_OPTS="--appdir=/Applications" ansible-playbook -i hosts mac.yml
 ```
 
-## An end goal
-* 自動化されていること
-* 汎用的であること
+## Licence
+
+MIT

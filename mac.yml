@@ -1,0 +1,82 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  sudo: no
+  vars:
+    homebrew_taps:
+      - caskroom/cask
+      - caskroom/fonts
+      - homebrew/binary
+      - homebrew/dupes
+      - waltarix/customs
+    homebrew_packages:
+      - readline
+      - openssl
+      - { name: openssl, state: linked, install_options: force }
+      - ansible
+      - git
+      - coreutils
+      - ghq
+      - go
+      - mackup
+      - peco
+      - reattach-to-user-namespace
+      - source-highlight
+      - tig
+      - tmux
+      # ansible-1.9.2 doesn't allow / in package name.
+      # - { name: waltarix/customs/zsh, install_options: --disable-etcdir }
+      - { name: zsh, install_options: disable-etcdir }
+    homebrew_cask_packages:
+      - 1password
+      - alfred
+      - appcleaner
+      - atom
+      - bettertouchtool
+      - daisydisk # MASのDRMがあればStand-aloneをインストール可能
+      - dropbox
+      - flux
+      - font-myrica
+      - google-chrome
+      - google-japanese-ime
+      - hyperswitch
+      - iterm2
+      - karabiner
+      - keka # MASは有料
+      - mplayerx
+      - omnifocus
+      - omnigraffle
+      - path-finder
+      - skitch
+      - vagrant
+      - virtualbox
+      - vmware-fusion
+
+  tasks:
+    - name: Tap external repositories
+      homebrew_tap: tap={{ item }} state=present
+      with_items: homebrew_taps
+
+    - name: Update homebrew
+      homebrew: update_homebrew=yes
+
+    # brew
+    - name: Install/Upgrade homebrew packages
+      homebrew: >
+        name={{ item.name | default(item) }}
+        state={{ item.state | default('latest') }}
+        install_options={{
+          item.install_options | default() | join(',')
+          if item.install_options is not string
+          else item.install_options
+        }}
+      with_items: homebrew_packages
+
+    # cask
+    - name: Install/Upgrade brew-cask
+      homebrew: name=brew-cask state=latest
+    - name: Install/Upgrade cask packages
+      homebrew_cask: >
+        name={{ item.name | default(item) }}
+        state={{ item.state | default('present') }}
+      with_items: homebrew_cask_packages
