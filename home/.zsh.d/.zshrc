@@ -90,6 +90,20 @@ bindkey "^N" history-beginning-search-forward-end
 bindkey -M menuselect '^P' up-line-or-history
 bindkey -M menuselect '^N' down-line-or-history
 
+# peco select history
+function peco-select-history() {
+    typeset tac
+    if which tac > /dev/null; then
+        tac=tac
+    else
+        tac='tail -r'
+    fi
+    BUFFER=$(fc -l -n 1 | eval $tac | peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle redisplay
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
 # ------------------------------------------------------- completion
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # 5.5.4 補完のグループ化 p147
