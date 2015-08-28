@@ -80,3 +80,20 @@
         name={{ item.name | default(item) }}
         state={{ item.state | default('present') }}
       with_items: homebrew_cask_packages
+
+    # symlink dotfiles
+    - name: Symlink dotfiles
+      file: |
+        src=~/dotfiles/home/{{ item }}
+        dest=~/{{ item }}
+        state=link
+        force=yes
+      with_items:
+        - .gemrc
+        - .gitconfig
+        - .gitignore
+        - .irbrc
+        - .tigrc
+        - .tmux.conf
+        - .zsh.d
+        - .zshenv

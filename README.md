@@ -10,8 +10,8 @@ Description
 
 - homebrewパッケージのインストール
 - homebrew caskパッケージのインストール
+- dotfilesのsymlink作成
 - (WIP)
-  - dotfilesリポジトリのcloneとsymlink作成
   - デフォルトシェルをzshに変更
   - defaultsコマンドでosxの環境設定
   - 最新安定版のrubyをrbenvでインストール
