@@ -83,6 +83,7 @@
 
     # symlink dotfiles
     - name: Symlink dotfiles
+      tags: dotfiles
       file: |
         src=~/dotfiles/home/{{ item }}
         dest=~/{{ item }}
