@@ -11,8 +11,8 @@ Description
 - homebrewパッケージのインストール
 - homebrew caskパッケージのインストール
 - dotfilesのsymlink作成
+- ログインシェルをzshに変更
 - (WIP)
-  - デフォルトシェルをzshに変更
   - 最新安定版のrubyをrbenvでインストール
   - Atomパッケージのインストール
   - Mackupリストア (after Dropbox sync)
@@ -46,7 +46,7 @@ brew install ansible
 # clone and run (with -vv if you want)
 git clone https://github.com/senosa/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-HOMEBREW_CASK_OPTS="--appdir=/Applications" ansible-playbook -i hosts mac.yml
+HOMEBREW_CASK_OPTS="--appdir=/Applications" ansible-playbook -i hosts -K mac.yml
 
 # set OSX defaults
 ./osx.sh
