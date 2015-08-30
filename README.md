@@ -13,10 +13,13 @@ Description
 - dotfilesのsymlink作成
 - (WIP)
   - デフォルトシェルをzshに変更
-  - defaultsコマンドでosxの環境設定
   - 最新安定版のrubyをrbenvでインストール
   - Atomパッケージのインストール
   - Mackupリストア (after Dropbox sync)
+
+Playbookでは実行しないこと。
+
+- defaultsコマンドでosxの環境設定
 
 Requirement
 ----------------------------------------------------------------
@@ -44,6 +47,9 @@ brew install ansible
 git clone https://github.com/senosa/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 HOMEBREW_CASK_OPTS="--appdir=/Applications" ansible-playbook -i hosts mac.yml
+
+# set OSX defaults
+./osx.sh
 ```
 
 Licence
