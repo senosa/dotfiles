@@ -1,17 +1,10 @@
-# My dotfiles
-This repository is optimized for me. You can clone or fork them freely, but I don't guarantee that they fit you.
+Dotfiles
+================================================================
 
-## Usage
+[Ansible][1]を使って配置するPlaybookは[senosa/provisioning][2]。
 
-```sh
-cd
-git clone git@github.com:senosa/oh-my-zsh.git .oh-my-zsh
+zsh関連は[senosa/prezto][3]。
 
-gem install homesick
-homesick clone senosa/dotfiles
-homesick link
-```
-
-## An end goal
-* 自動化されていること
-* 汎用的であること
+[1]:http://www.ansible.com/home
+[2]:https://github.com/senosa/provisioning
+[3]:https://github.com/senosa/prezto
