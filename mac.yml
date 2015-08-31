@@ -90,6 +90,7 @@
         state=link
         force=yes
       with_items:
+        - config
         - gemrc
         - gitconfig
         - gitignore
