@@ -146,6 +146,20 @@
         - zshenv
         - zshrc
 
+    # dircolors-solarized
+    - name: Checkout dircolors-solarized repository
+      tags: dircolors
+      git: |
+        repo=https://github.com/seebi/dircolors-solarized.git
+        dest=~/src/github.com/seebi/dircolors-solarized
+    - name: Symlink dircolorsdb to ~/.dir_colors
+      tags: dircolors
+      file: |
+        src=~/src/github.com/seebi/dircolors-solarized/dircolors.256dark
+        dest=~/.dir_colors
+        state=link
+        force=yes
+
     # zsh
     - name: Add /usr/local/bin/zsh to /etc/shells
       tags: zsh
