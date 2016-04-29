@@ -19,6 +19,7 @@
       - ghq
       - go
       - mackup
+      - { name: mpv, install_options: with-bundle }
       - nano
       - peco
       - rbenv
@@ -48,7 +49,6 @@
       - iterm2
       - karabiner
       - keka # MASは有料
-      - mplayerx
       - omnifocus
       - omnigraffle
       - path-finder
