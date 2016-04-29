@@ -45,6 +45,7 @@
       - font-myrica
       - google-chrome
       - google-japanese-ime
+      - hetimazipql
       - hyperswitch
       - iterm2
       - karabiner
@@ -52,6 +53,9 @@
       - omnifocus
       - omnigraffle
       - path-finder
+      - qlcolorcode
+      - qlmarkdown
+      - quicklook-json
       - skitch
       - vagrant
       - virtualbox
