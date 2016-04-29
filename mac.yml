@@ -42,7 +42,7 @@
       - daisydisk # MASのDRMがあればStand-aloneをインストール可能
       - dropbox
       - flux
-      - font-myrica
+      - font-ricty-diminished
       - google-chrome
       - google-japanese-ime
       - hetimazipql
