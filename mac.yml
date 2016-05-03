@@ -26,6 +26,7 @@
       - reattach-to-user-namespace
       - ruby-build
       - source-highlight
+      - terminal-notifier
       - tig
       - tmux
       # ansible-1.9.2 doesn't allow / in package name.
