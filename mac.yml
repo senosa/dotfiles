@@ -6,7 +6,6 @@
     homebrew_taps:
       - caskroom/cask
       - caskroom/fonts
-      - homebrew/binary
       - homebrew/dupes
       - waltarix/customs
     homebrew_packages:
