@@ -29,9 +29,7 @@
       - terminal-notifier
       - tig
       - tmux
-      # ansible-1.9.2 doesn't allow / in package name.
-      # - { name: waltarix/customs/zsh, install_options: --disable-etcdir }
-      - { name: zsh, install_options: disable-etcdir }
+      - { name: waltarix/customs/zsh, install_options: disable-etcdir }
     homebrew_cask_packages:
       - 1password
       - alfred
