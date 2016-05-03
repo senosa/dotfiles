@@ -112,6 +112,7 @@
         - gitconfig
         - gitignore
         - irbrc
+        - mackup.cfg # TODO Separate dropbox dir for Desktop, Notebook
         - nanorc
         - tigrc
         - tmux.conf
