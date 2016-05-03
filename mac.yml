@@ -16,7 +16,6 @@
       - git
       - coreutils
       - ghq
-      - go
       - jq
       - mackup
       - { name: mpv, install_options: with-bundle }
