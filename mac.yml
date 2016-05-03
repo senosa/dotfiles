@@ -115,8 +115,6 @@
         - nanorc
         - tigrc
         - tmux.conf
-        - zsh.d
-        - zshenv
 
     # prezto
     - name: Checkout prezto repository
