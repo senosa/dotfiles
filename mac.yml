@@ -80,8 +80,6 @@
       with_items: homebrew_packages
 
     # cask
-    - name: Install/Upgrade brew-cask
-      homebrew: name=brew-cask state=latest
     - name: Install/Upgrade cask packages
       homebrew_cask: >
         name={{ item.name | default(item) }}
