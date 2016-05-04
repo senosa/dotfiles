@@ -1,7 +1,7 @@
 - hosts: localhost
   connection: local
   gather_facts: no
-  sudo: no
+  become: no
   vars:
     homebrew_taps:
       - caskroom/cask
@@ -62,7 +62,7 @@
   tasks:
     - name: Tap external repositories
       homebrew_tap: tap={{ item }} state=present
-      with_items: homebrew_taps
+      with_items: {{ homebrew_taps }}
 
     - name: Update homebrew
       homebrew: update_homebrew=yes
@@ -77,14 +77,14 @@
           if item.install_options is not string
           else item.install_options
         }}
-      with_items: homebrew_packages
+      with_items: {{ homebrew_packages }}
 
     # cask
     - name: Install/Upgrade cask packages
       homebrew_cask: >
         name={{ item.name | default(item) }}
         state={{ item.state | default('present') }}
-      with_items: homebrew_cask_packages
+      with_items: {{ homebrew_cask_packages }}
 
     # dotfiles
     - name: Checkout dotfiles repository
@@ -162,13 +162,13 @@
     # zsh
     - name: Add /usr/local/bin/zsh to /etc/shells
       tags: zsh
-      sudo: yes
+      become: yes
       lineinfile: dest=/etc/shells line='/usr/local/bin/zsh'
 
     # groupsが不安なので `chsh -s /usr/local/bin/zsh sen` にする
     - name: Change login shell to /usr/local/bin/zsh
       tags: zsh
-      sudo: yes
+      become: yes
       shell: chsh -s /usr/local/bin/zsh sen
       register: result
       changed_when: result.stderr.find('no changes made') == -1
