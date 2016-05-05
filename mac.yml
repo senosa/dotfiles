@@ -92,7 +92,7 @@
     - name: Rebuild font cache
       tags: powerline
       shell: fc-cache -vf
-      when: result.changed == true 
+      when: result.changed == true
 
     # cask
     - name: Install/Upgrade cask packages
