@@ -7,6 +7,7 @@
       - caskroom/cask
       - caskroom/fonts
       - homebrew/dupes
+      - sanemat/font
       - waltarix/customs
     homebrew_packages:
       - readline
@@ -24,6 +25,7 @@
       - rbenv
       - rbenv-default-gems
       - reattach-to-user-namespace
+      - { name: ricty, install_options: powerline, vim-powerline }
       - ruby-build
       - source-highlight
       - terminal-notifier
@@ -79,6 +81,18 @@
           else item.install_options
         }}
       with_items: "{{ homebrew_packages }}"
+
+    # Ricty for Powerline
+    - name: Install Ricty for Powerline fonts
+      tags: powerline
+      shell: >
+        cp /usr/local/Cellar/ricty/3.2.4/share/fonts/Ricty*.ttf ~/Library/Fonts/
+        creates="~/Library/Fonts/Ricty Regular for Powerline.ttf"
+      register: result
+    - name: Rebuild font cache
+      tags: powerline
+      shell: fc-cache -vf
+      when: result.changed == true 
 
     # cask
     - name: Install/Upgrade cask packages
