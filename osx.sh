@@ -148,7 +148,7 @@ chflags nohidden ~/Library
 
 # QuickLook - QLColorCode
 defaults write org.n8gray.QLColorCode fontSizePoints 11
-defaults write org.n8gray.QLColorCode font 'Ricty Diminished'
+defaults write org.n8gray.QLColorCode font 'Ricty'
 defaults write org.n8gray.QLColorCode extraHLFlags '-l -W --line-length=110 --replace-tabs=2'
 
 ###############################################################################
