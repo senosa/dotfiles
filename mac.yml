@@ -67,10 +67,12 @@
       homebrew_tap: tap={{ item }} state=present
       with_items: "{{ homebrew_taps }}"
 
+    - name: Update homebrew
+      homebrew: update_homebrew=yes
+
     # brew
     - name: Install/Upgrade homebrew packages
       homebrew: >
-        update_homebrew=yes
         name={{ item.name | default(item) }}
         state={{ item.state | default('latest') }}
         install_options={{
