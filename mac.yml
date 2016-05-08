@@ -17,6 +17,7 @@
       - git
       - coreutils
       - ghq
+      - heroku
       - jq
       - mackup
       - { name: mpv, install_options: with-bundle }
