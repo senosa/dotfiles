@@ -39,6 +39,7 @@
       - appcleaner
       - atom
       - bettertouchtool
+      - coteditor
       - daisydisk # MASのDRMがあればStand-aloneをインストール可能
       - dropbox
       - flux
