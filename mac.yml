@@ -43,6 +43,7 @@
       - daisydisk # MASのDRMがあればStand-aloneをインストール可能
       - dropbox
       - flux
+      - gas-mask
       - google-chrome
       - google-japanese-ime
       - hyperswitch
