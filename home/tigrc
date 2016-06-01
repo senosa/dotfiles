@@ -14,7 +14,7 @@ set tab-size = 2
 # statusの色  文字:yellow
 color status color003 default
 
-# cursor行の色 文字:yellow 背景:solarized#base02
+# cursor行の色
 color cursor blue color000
 
 # background viewのタイトルバー
