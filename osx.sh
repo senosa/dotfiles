@@ -60,7 +60,7 @@ defaults write com.apple.dock dashboard-in-overlay -bool true
 # defaults write com.apple.dock mru-spaces -bool false
 
 # Automatically hide and show the Dock
-defaults write com.apple.dock autohide -bool true
+# defaults write com.apple.dock autohide -bool true
 
 # -------------------------------------------------------------- Expose.prefPane
 # Hot corners
