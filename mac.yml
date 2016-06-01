@@ -132,6 +132,13 @@
         - nanorc
         - tigrc
         - tmux.conf
+    - name: Symlink dotfiles_private
+      tags: dotfiles
+      file: |
+        src=~/Dropbox/dotfiles_private
+        dest=~/.dotfiles_private
+        state=link
+        force=yes
 
     # prezto
     - name: Checkout prezto repository
