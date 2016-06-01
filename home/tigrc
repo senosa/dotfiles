@@ -17,7 +17,7 @@ color status color003 default
 # cursor行の色 文字:yellow 背景:solarized#base02
 color cursor blue color000
 
-# background viewのタイトルバーの背景はsolarized#base01
-color title-blur color008 color010
-# current viewのタイトルバーの背景は青
-color title-focus color008 blue
+# background viewのタイトルバー
+color title-blur default color237
+# current viewのタイトルバー
+color title-focus black blue
