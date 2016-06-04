@@ -17,6 +17,7 @@
       - git
       - coreutils
       - ghq
+      - go
       - heroku
       - jq
       - mackup
