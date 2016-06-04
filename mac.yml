@@ -32,6 +32,7 @@
       - terminal-notifier
       - tig
       - tmux
+      - tree
       - { name: waltarix/customs/zsh, install_options: disable-etcdir }
     homebrew_cask_packages:
       - 1password
@@ -62,6 +63,7 @@
       - hetimazipql
       - qlcolorcode
       - qlmarkdown
+      - qlstephen
       - quicklook-json
 
   tasks:
