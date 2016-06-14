@@ -11,13 +11,16 @@ set main-view = line-number:no,interval=5 id:no date:local author:abbreviated \
 # tab-size
 set tab-size = 2
 
-# statusの色  文字:yellow
-color status color003 default
+# 水平分割した時の下viewサイズ
+set split-view-height = 80%
+
+# statusの色
+color status magenta default
 
 # cursor行の色
-color cursor blue color000
+color cursor default color252
 
 # background viewのタイトルバー
-color title-blur default color237
+color title-blur default color245
 # current viewのタイトルバー
 color title-focus black blue
