@@ -5,7 +5,7 @@ bind status C !git commit -v
 set diff-options = -m --first-parent
 
 # main-view
-set main-view = line-number:no,interval=5 id:no date:local author:abbreviated \
+set main-view = line-number:no,interval=5 id:no date:default author:abbreviated \
   commit-title:graph=yes,refs=yes
 
 # tab-size
