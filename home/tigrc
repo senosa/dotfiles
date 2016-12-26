@@ -18,9 +18,21 @@ set split-view-height = 80%
 color status magenta default
 
 # cursor行の色
-color cursor default color252
+color cursor default color252 bold
+# tmux内だとunderlineが表示されない
+#color cursor default default underline
 
 # background viewのタイトルバー
 color title-blur default color245
 # current viewのタイトルバー
 color title-focus black blue
+
+# キレイなdiff(tmux内だと効かない)
+set diff-highlight = true
+
+# color diff-header yellow default
+# color diff-index  blue default
+# color diff-chunk  magenta default
+color diff-header default default bold
+color diff-index  default default
+color diff-chunk  cyan default
