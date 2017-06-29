@@ -18,7 +18,7 @@ set split-view-height = 80%
 color status magenta default
 
 # cursor行の色
-color cursor default color252 bold
+color cursor default color000 bold
 # tmux内だとunderlineが表示されない
 #color cursor default default underline
 
