@@ -4,7 +4,6 @@
 [color]
 	ui = auto
 [core]
-	excludesfile = /Users/sen/.gitignore
 [push]
 	default = simple
 [pager]
