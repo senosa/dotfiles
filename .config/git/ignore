@@ -1,0 +1,24 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+.vscode
+
+# Icon must ends with two \r.
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+*~
+
+# Environment normalisation
+/vendor/bundle
+
+# My temporary directory and files
+,/
+,*
