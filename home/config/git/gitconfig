@@ -6,6 +6,8 @@
 [core]
 [push]
 	default = simple
+[pull]
+	rebase = false
 [pager]
 	log = diff-highlight | less
 	show = diff-highlight | less
