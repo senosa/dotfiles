@@ -20,6 +20,4 @@ fi
 
 cd "$DOTPATH"
 
-# ./bootstrap/main.sh
-
-echo "Bootstrapping DONE!"
+./bootstrap/main.sh
