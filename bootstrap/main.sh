@@ -23,11 +23,11 @@ fi
 scripts/deploy.sh
 echo
 
-# command_prefix=""
-# if [ "$(uname -m)" = "arm64" ]; then
-#   # Install on Rosetta 2
-#   command_prefix="arch -arch x86_64"
-# fi
+command_prefix=""
+if [ "$(uname -m)" = "arm64" ]; then
+  # Install on Rosetta 2
+  command_prefix="arch -arch x86_64"
+fi
 
 # # Install Rosetta 2 when ARM
 # if [ "$(uname -m)" = "arm64" ]; then
@@ -50,9 +50,8 @@ echo
 # # TODO: prioritize ARM homebrew
 # # export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 
-# export HOMEBREW_BUNDLE_NO_LOCK=1
-# $command_prefix brew bundle
-# echo
+$command_prefix brew bundle --no-lock
+echo
 
 # mackup restore
 # echo
