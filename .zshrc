@@ -28,6 +28,7 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
 zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
 zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
+zstyle ':prezto:module:utility:ls' color 'no' # color by exa
 
 zinit is-snippet for \
   PZT::modules/helper \
