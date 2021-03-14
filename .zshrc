@@ -53,10 +53,6 @@ zinit ice wait lucid atinit"zpcompinit; zpcdreplay"
 zinit light zdharma/fast-syntax-highlighting
 zinit light zdharma/history-search-multi-word
 
-zinit ice from'gh-r' as'program'
-zinit light sei40kr/fast-alias-tips-bin
-zinit light sei40kr/zsh-fast-alias-tips
-
 zinit light mafredri/zsh-async
 zinit ice depth'1'; zinit light denysdovhan/spaceship-prompt
 
