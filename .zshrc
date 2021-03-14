@@ -58,35 +58,22 @@ zinit light mafredri/zsh-async
 zinit ice depth'1'; zinit light denysdovhan/spaceship-prompt
 
 ### prezto/runcoms/zprofile
-
-#
 # Browser
-#
-
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
 fi
 
-#
 # Editors
-#
-
 export EDITOR='nano'
 export VISUAL='nano'
 export PAGER='less'
 
-#
 # Language
-#
-
 if [[ -z "$LANG" ]]; then
   export LANG='ja_JP.UTF-8'
 fi
 
-#
 # Paths
-#
-
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
@@ -102,10 +89,7 @@ path=(
   $path
 )
 
-#
 # Less
-#
-
 # Set the default Less options.
 # Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
 # Remove -X and -F (exit if the content fits on one screen) to enable it.
@@ -122,10 +106,7 @@ if type src-hilite-lesspipe.sh 2>/dev/null 1>/dev/null; then
   export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
 fi
 
-#
 # Temporary Files
-#
-
 if [[ ! -d "$TMPDIR" ]]; then
   export TMPDIR="$(mktemp -d)"
 fi
