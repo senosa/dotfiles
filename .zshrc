@@ -48,6 +48,7 @@ zinit snippet PZT::modules/history-substring-search
 zinit ice submods'zsh-users/zsh-autosuggestions -> external'
 zinit snippet PZT::modules/autosuggestions
 
+### plugin
 zinit ice wait lucid atinit"zpcompinit; zpcdreplay"
 zinit light zdharma/fast-syntax-highlighting
 zinit light zdharma/history-search-multi-word
@@ -56,18 +57,85 @@ zinit ice from'gh-r' as'program'
 zinit light sei40kr/fast-alias-tips-bin
 zinit light sei40kr/zsh-fast-alias-tips
 
-# prompt
 zinit light mafredri/zsh-async
 zinit ice depth'1'; zinit light denysdovhan/spaceship-prompt
 
-# path
+### prezto/runcoms/zprofile
+
+#
+# Browser
+#
+
+if [[ "$OSTYPE" == darwin* ]]; then
+  export BROWSER='open'
+fi
+
+#
+# Editors
+#
+
+export EDITOR='nano'
+export VISUAL='nano'
+export PAGER='less'
+
+#
+# Language
+#
+
+if [[ -z "$LANG" ]]; then
+  export LANG='ja_JP.UTF-8'
+fi
+
+#
+# Paths
+#
+
+# Ensure path arrays do not contain duplicates.
+typeset -gU cdpath fpath mailpath path
+
+# Set the list of directories that cd searches.
+# cdpath=(
+#   $cdpath
+# )
+
+# Set the list of directories that Zsh searches for programs.
 path=(
   $HOME/bin
   /usr/local/{bin,sbin}
   $path
 )
 
-# alias
+#
+# Less
+#
+
+# Set the default Less options.
+# Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
+# Remove -X and -F (exit if the content fits on one screen) to enable it.
+export LESS='-F -g -i -M -R -S -w -X -z-4 -j10'
+
+# Set the Less input preprocessor.
+# Try both `lesspipe` and `lesspipe.sh` as either might exist on a system.
+if (( $#commands[(i)lesspipe(|.sh)] )); then
+  export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
+fi
+
+# /usr/local/bin/src-hilite-lesspipe.sh
+if type src-hilite-lesspipe.sh 2>/dev/null 1>/dev/null; then
+  export LESSOPEN="| /usr/local/bin/src-hilite-lesspipe.sh %s"
+fi
+
+#
+# Temporary Files
+#
+
+if [[ ! -d "$TMPDIR" ]]; then
+  export TMPDIR="$(mktemp -d)"
+fi
+
+TMPPREFIX="${TMPDIR%/}/zsh"
+
+### alias
 alias cat='bat'
 alias ls='exa --time-style=iso'
 alias l='ls -1a'          # in one column, hidden files.
