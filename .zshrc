@@ -29,6 +29,7 @@ zinit snippet PZT::modules/gnu-utility/init.zsh
 zinit snippet PZT::modules/utility/init.zsh
 zinit snippet PZT::modules/directory/init.zsh
 zinit snippet PZT::modules/history/init.zsh
+zinit snippet PZT::modules/history-substring-search/init.zsh
 zinit snippet PZT::modules/completion/init.zsh
 zinit snippet PZT::modules/homebrew/init.zsh
 # zinit snippet PZT::modules/git/alias.zsh
@@ -45,14 +46,6 @@ zinit ice wait"1" atinit"zpcompinit; zpcdreplay" lucid
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 zinit light zdharma/history-search-multi-word
-zinit light zsh-users/zsh-history-substring-search
-  zmodload zsh/terminfo
-  [ -n "${terminfo[kcuu1]}" ] && bindkey "${terminfo[kcuu1]}" history-substring-search-up
-  [ -n "${terminfo[kcud1]}" ] && bindkey "${terminfo[kcud1]}" history-substring-search-down
-  bindkey -M emacs '^P' history-substring-search-up
-  bindkey -M emacs '^N' history-substring-search-down
-  bindkey -M vicmd 'k' history-substring-search-up
-  bindkey -M vicmd 'j' history-substring-search-down
 
 # zinit ice from'gh-r' as'program'
 # zinit light sei40kr/fast-alias-tips-bin
