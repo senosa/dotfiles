@@ -62,10 +62,6 @@ zinit light zsh-users/zsh-history-substring-search
 zinit light mafredri/zsh-async
 zinit ice depth'1'; zinit light denysdovhan/spaceship-prompt
 
-# completion
-zinit ice wait'0' blockf lucid
-zinit light zsh-users/zsh-completions
-
 # path
 path=(
   $HOME/bin
