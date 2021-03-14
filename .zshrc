@@ -1,5 +1,3 @@
-# .zshrc
-
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
@@ -16,40 +14,47 @@ autoload -Uz _zinit
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
 zinit light-mode for \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-bin-gem-node
+  zinit-zsh/z-a-patch-dl \
+  zinit-zsh/z-a-as-monitor \
+  zinit-zsh/z-a-bin-gem-node
     
 ### End of Zinit's installer chunk
 
-# Prezto
-zinit snippet PZT::modules/helper/init.zsh
-zinit snippet PZT::modules/environment/init.zsh
-zinit snippet PZT::modules/gnu-utility/init.zsh
-zinit snippet PZT::modules/utility/init.zsh
-zinit snippet PZT::modules/directory/init.zsh
-zinit snippet PZT::modules/history/init.zsh
-zinit snippet PZT::modules/history-substring-search/init.zsh
-zinit snippet PZT::modules/completion/init.zsh
-zinit snippet PZT::modules/homebrew/init.zsh
-# zinit snippet PZT::modules/git/alias.zsh
-# zinit snippet PZT::modules/git/init.zsh
+zinit light zinit-zsh/z-a-submods
+
+### Prezto
+zstyle ':prezto:*:*' color 'yes'
 zstyle ':prezto:module:terminal' auto-title 'yes'
 zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
 zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
 zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
-zinit snippet PZT::modules/terminal/init.zsh
 
-# zinit snippet OMZ::plugins/git/git.plugin.zsh
+zinit is-snippet for \
+  PZT::modules/helper \
+  PZT::modules/environment \
+  PZT::modules/terminal \
+  PZT::modules/editor \
+  PZT::modules/history \
+  PZT::modules/directory \
+  PZT::modules/spectrum \
+  PZT::modules/gnu-utility \
+  PZT::modules/utility \
+  PZT::modules/completion \
+  PZT::modules/homebrew
+  # PZT::modules/git
 
-zinit ice wait"1" atinit"zpcompinit; zpcdreplay" lucid
-zinit light zsh-users/zsh-autosuggestions
+zinit ice submods'zsh-users/zsh-history-substring-search -> external'
+zinit snippet PZT::modules/history-substring-search
+zinit ice submods'zsh-users/zsh-autosuggestions -> external'
+zinit snippet PZT::modules/autosuggestions
+
+zinit ice wait lucid atinit"zpcompinit; zpcdreplay"
 zinit light zdharma/fast-syntax-highlighting
 zinit light zdharma/history-search-multi-word
 
-# zinit ice from'gh-r' as'program'
-# zinit light sei40kr/fast-alias-tips-bin
-# zinit light sei40kr/zsh-fast-alias-tips
+zinit ice from'gh-r' as'program'
+zinit light sei40kr/fast-alias-tips-bin
+zinit light sei40kr/zsh-fast-alias-tips
 
 # prompt
 zinit light mafredri/zsh-async
