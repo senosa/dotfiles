@@ -2,7 +2,8 @@
 
 set -eu
 
-DOTPATH=$HOME/dotfiles
+# DOTPATH=$HOME/dotfiles
+DOTPATH=$HOME/src/github.com/senosa/dotfiles
 
 BRANCH="${1:-master}"
 echo "Bootstrap with branch '${BRANCH}'"

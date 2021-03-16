@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
+DOTSRC="$HOME/src/github.com/senosa/dotfiles"
 DOTPATH="$HOME/dotfiles"
 
-if [ ! -e "$DOTPATH" ]; then
-  echo "Error: Directory $DOTPATH does not exist."
+if [ ! -e "$DOTSRC" ]; then
+  echo "Error: Directory $DOTSRC does not exist."
   exit 1
 fi
+ln -fvns "$DOTSRC" "$DOTPATH"
 
 cd "$DOTPATH" || exit 1
 
