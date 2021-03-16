@@ -115,7 +115,7 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 
 ### alias
 alias cat='bat'
-alias ls='exa --time-style=iso'
+alias ls='exa --time-style=iso --color=always'
 alias l='ls -1a'          # in one column, hidden files.
 alias ll='ls -l'          # in long view.
 alias lT='ll -T'          # in long tree view.
