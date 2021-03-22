@@ -114,6 +114,11 @@ fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
 
+### anyframe
+zinit light mollifier/anyframe
+bindkey '^xg' anyframe-widget-cd-ghq-repository
+bindkey '^xr' anyframe-widget-execute-history
+
 ### alias
 alias cat='bat'
 alias ls='exa --time-style=iso --color=always'
