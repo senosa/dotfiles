@@ -59,10 +59,8 @@ zinit ice depth'1'; zinit light denysdovhan/spaceship-prompt
 
 if [[ ${REMOTE_CONTAINERS} ]] ; then
   zinit wait"1" lucid from"gh-r" as"null" for \
-    #  sbin"fzf"          junegunn/fzf-bin \
-    #  sbin"**/fd"        @sharkdp/fd \
-     sbin"**/bat"       @sharkdp/bat \
-     sbin"exa* -> exa"  ogham/exa
+      sbin"**/bat"  @sharkdp/bat \
+      sbin"bin/exa" ogham/exa
 fi
 
 ### prezto/runcoms/zprofile
