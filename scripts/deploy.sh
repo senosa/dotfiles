@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 
-DOTSRC="$HOME/src/github.com/senosa/dotfiles"
 DOTPATH="$HOME/dotfiles"
 
-if [ ! -e "$DOTSRC" ]; then
-  echo "Error: Directory $DOTSRC does not exist."
+if [ ! -e "$DOTPATH" ]; then
+  echo "Error: Directory $DOTPATH does not exist."
   exit 1
 fi
-ln -fvns "$DOTSRC" "$DOTPATH"
 
 cd "$DOTPATH" || exit 1
 
@@ -24,7 +22,7 @@ done
 
 # .config
 mkdir -p "$XDG_CONFIG_HOME"
-find "$DOTPATH/.config" -maxdepth 1 -mindepth 1 -exec ln -fvns {} "$XDG_CONFIG_HOME/" \;
+find "$DOTPATH/.config" -maxdepth 1 -mindepth 1 | xargs -I DIR ln -fvns DIR "$XDG_CONFIG_HOME"
 
 # # bin
 # mkdir -p ~/bin
