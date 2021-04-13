@@ -144,6 +144,10 @@ zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
 # zinit ice wait"1" lucid submods'zsh-users/zsh-history-substring-search -> external'
 # zinit snippet PZTM::history-substring-search # depend on module/editor
 
+zinit wait lucid is-snippet as"completion" for \
+  OMZP::docker/_docker \
+  OMZP::docker-compose/_docker-compose
+
 #
 # Zstyles
 #
