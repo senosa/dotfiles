@@ -152,6 +152,9 @@ zinit wait lucid is-snippet as"completion" for \
 # Zstyles
 #
 
+zstyle ':completion::complete:*' use-cache on
+zstyle ':completion::complete:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompcache"
+
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 unsetopt CASE_GLOB
 
