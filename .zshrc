@@ -2,6 +2,9 @@
 # Exports
 #
 
+typeset -A ZINIT
+ZINIT[ZCOMPDUMP_PATH]="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
+
 export HISTSIZE=290000 SAVEHIST=290000 HISTFILE=~/.zhistory
 export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
