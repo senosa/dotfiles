@@ -93,7 +93,7 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
 [[ ! -f ~/.zinit/bin/zinit.zsh ]] && {
     command mkdir -p ~/.zinit
-    command git clone https://github.com/zdharma/zinit ~/.zinit/bin
+    command git clone https://github.com/zdharma-continuum/zinit ~/.zinit/bin
 }
 
 source "$HOME/.zinit/bin/zinit.zsh"
@@ -101,16 +101,16 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 zinit light-mode for \
-  zinit-zsh/z-a-as-monitor \
-  zinit-zsh/z-a-patch-dl \
-  zinit-zsh/z-a-submods \
-  zinit-zsh/z-a-bin-gem-node \
-  zinit-zsh/z-a-rust
+  zdharma-continuum/z-a-as-monitor \
+  zdharma-continuum/z-a-patch-dl \
+  zdharma-continuum/z-a-submods \
+  zdharma-continuum/z-a-bin-gem-node \
+  zdharma-continuum/z-a-rust
 
 # Fast-syntax-highlighting & autosuggestions & completions
 zinit wait lucid for \
   atinit'zicompinit; zicdreplay' \
-    zdharma/fast-syntax-highlighting \
+    zdharma-continuum/fast-syntax-highlighting \
   atload'_zsh_autosuggest_start' \
     zsh-users/zsh-autosuggestions \
   blockf atpull'zinit creinstall -q .' \
@@ -119,7 +119,7 @@ zinit wait lucid for \
 # A few wait'1 plugins
 zinit wait'1' lucid for \
   atinit'zstyle ":history-search-multi-word" page-size "11"' \
-    zdharma/history-search-multi-word \
+    zdharma-continuum/history-search-multi-word \
 
 # RUST CLI tools. ogham/exa, sharkdp/bat
 zinit wait'2' lucid as'null' from'gh-r' for \
