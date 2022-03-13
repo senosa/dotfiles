@@ -91,12 +91,12 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 # Zinit
 #
 
-[[ ! -f ~/.zinit/bin/zinit.zsh ]] && {
-    command mkdir -p ~/.zinit
-    command git clone https://github.com/zdharma-continuum/zinit ~/.zinit/bin
+[[ ! -f ~/.local/share/zinit/zinit.git/zinit.zsh ]] && {
+    command mkdir -p ~/.local/share/zinit/zinit.git
+    command git clone https://github.com/zdharma-continuum/zinit.git ~/.local/share/zinit/zinit.git
 }
 
-source "$HOME/.zinit/bin/zinit.zsh"
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
