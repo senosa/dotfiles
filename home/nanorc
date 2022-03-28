@@ -1,4 +1,0 @@
-set nowrap
-set softwrap
-
-include "/usr/local/share/nano/ruby.nanorc"
