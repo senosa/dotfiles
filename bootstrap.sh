@@ -15,9 +15,8 @@ else
   git stash
   git checkout "$BRANCH"
   git pull origin "$BRANCH"
-  echo
 fi
+echo
 
 cd "$DOTPATH"
-
 ./install.sh
