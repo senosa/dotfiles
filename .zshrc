@@ -70,7 +70,7 @@ zle -N bracketed-paste bracketed-paste-url-magic
 
 alias cat='bat'
 
-alias ls='exa --time-style=iso --color=always'
+alias ls='exa --time-style=iso --color=always --icons'
 alias l='ls -1a'          # in one column, hidden files.
 alias ll='ls -l'          # in long view.
 alias lT='ll -T'          # in long tree view.
