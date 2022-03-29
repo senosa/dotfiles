@@ -17,9 +17,11 @@ if [ "$(xcode-select -p 1>/dev/null; echo $?)" != 0 ]; then
   exit 1
 fi
 
+echo 'Configuring macOS'
 scripts/configure.sh
 echo
 
+echo 'Linking dotfiles'
 scripts/deploy.sh
 echo
 
