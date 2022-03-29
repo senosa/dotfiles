@@ -121,13 +121,8 @@ zinit wait'1' lucid for \
   atinit'zstyle ":history-search-multi-word" page-size "11"' \
     zdharma-continuum/history-search-multi-word \
 
-# RUST CLI tools. ogham/exa, sharkdp/bat
-zinit wait'2' lucid as'null' from'gh-r' for \
-  mv'**/exa* -> exa' sbin  ogham/exa \
-  mv'bat* -> bat' sbin'bat/bat'  @sharkdp/bat
-
-zinit lucid depth'1' light-mode for \
-  denysdovhan/spaceship-prompt
+# prompt
+eval "$(starship init zsh)"
 
 # Prezto
 zinit wait lucid is-snippet for \
