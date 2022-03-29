@@ -17,8 +17,8 @@ if [ "$(xcode-select -p 1>/dev/null; echo $?)" != 0 ]; then
   exit 1
 fi
 
-# scripts/configure.sh
-# echo
+scripts/configure.sh
+echo
 
 scripts/deploy.sh
 echo
