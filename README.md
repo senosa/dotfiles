@@ -4,7 +4,7 @@ My dotfiles
 ## Requirement
 - Sign in to Mac App Store
 - command line developer tools: `xcode-select --install`
-- macOS 14.4.4 and later
+- macOS 10.14.4 and later
 	- [mas][1] requires Swift 5 runtime support.
 
 ## Usage
