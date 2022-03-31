@@ -36,6 +36,7 @@ curl -L https://raw.githubusercontent.com/senosa/dotfiles/master/bootstrap.sh | 
 	- 一般: グローバルアプリケーションメニューOFF
 	- ブラウザ: 端に到達したらループON
 	- 機能
+		- 圧縮: アーカイブをPath Finderで解凍するOFF
 		- キーボード: ウインドウ>次の(前の)タブを選択、をctrl(+shift)+tab
 - システム環境設定の残り
 	- アクセシビリティ
@@ -46,7 +47,9 @@ curl -L https://raw.githubusercontent.com/senosa/dotfiles/master/bootstrap.sh | 
 	- ソフトウェア・アップデート: 詳細: macOSアップデートOFF
 	- キーボード
 		- キーボード: リピート速く
-		- ショートカット: Spotlight検索を表示OFFまたは変更
+		- ショートカット:
+			- キーボード: 次のウインドウを操作対象にするをoption+tab
+			- Spotlight: Spotlight検索を表示OFFまたは変更
 	- 省エネルギー: ディスプレイがオフのときにスリープさせないON
 - ~/.ssh
 - 各種ログイン
@@ -63,8 +66,11 @@ curl -L https://raw.githubusercontent.com/senosa/dotfiles/master/bootstrap.sh | 
 - Google Chrome: GoogleアカウントでChromeプロフィールを同期
 	- デザイン: 終了時の警告メッセージOFF
 - Keka
+	- 一般: デフォルトに設定
 	- 圧縮: 圧縮後にFinderで表示OFF、個別の圧縮ファイルを作成ON
+	- 解凍: 解凍後にFinderで表示OFF
 	- ファイルアクセス: ホーム、外部ドライブ
+	- Finder拡張機能: 有効化
 	- 本体ウインドウで圧縮法を指定、個別の圧縮ファイル作成ON
 
 [1]:https://github.com/mas-cli/mas
