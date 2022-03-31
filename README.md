@@ -14,12 +14,57 @@ curl -L https://raw.githubusercontent.com/senosa/dotfiles/master/bootstrap.sh | 
 ブランチ名指定は `bash -s -- branchname`
 
 ## 手動でやること
-- Dropbox (iTerm2とAlfredの同期に使っている)
-- システム環境設定の残り
+- Karabiner-Elements
+	- Function keys: スタンダードファンクションキー
+	- 他の設定はdotfiles管理
+- 1Password: ログインして同期
+- Dropbox
+	- 不要な設定を解除(バックアップ、写真アップロード)
 - Alfred
-- 1Password
+	- Powerpack: アクティベート
+	- Advanced:
+		- Syncing: ~/Dropbox/Alfred
+		- Force Keyboard: ABC
+	- General:
+		- Hotkey: command+space
+		- Permissions: アクセシビリティ、フルディスクアクセス
 - iTerm2
-- ログインだけ(VSCode, Spark, Googleアカウントなど)
-- Apple IDサインインは時間とCPUを使うので最後に
+	- Preferences: General: Preferences:
+		- custom folder: ~/.config/iTerm2
+		- Save changes: Automatically
+- Path Finder: ライセンスでアクティベート
+	- 一般: グローバルアプリケーションメニューOFF
+	- ブラウザ: 端に到達したらループON
+	- 機能
+		- キーボード: ウインドウ>次の(前の)タブを選択、をctrl(+shift)+tab
+- システム環境設定の残り
+	- アクセシビリティ
+		- ポインタコントロール
+			- トラックパッドオプション
+				- スクロールの速さ: 一番速く
+				- ドラッグを有効: ３本指のドラッグ
+	- ソフトウェア・アップデート: 詳細: macOSアップデートOFF
+	- キーボード
+		- キーボード: リピート速く
+		- ショートカット: Spotlight検索を表示OFFまたは変更
+	- 省エネルギー: ディスプレイがオフのときにスリープさせないON
+- ~/.ssh
+- 各種ログイン
+	- Googleアカウント: SafariとChromeでログイン
+	- Spark
+	- Github
+	- VSCode
+	- Apple ID
+		- iCloud Drive: オプション: デスクトップと書類
+- Safari
+	- 一般: Safari起動時: 最後のセッションの全ウインドウ
+	- 自動入力: ユーザ名とパスワードOFF (1Password使用)
+- カレンダー: 誕生日カレンダーを表示OFF
+- Google Chrome: GoogleアカウントでChromeプロフィールを同期
+	- デザイン: 終了時の警告メッセージOFF
+- Keka
+	- 圧縮: 圧縮後にFinderで表示OFF、個別の圧縮ファイルを作成ON
+	- ファイルアクセス: ホーム、外部ドライブ
+	- 本体ウインドウで圧縮法を指定、個別の圧縮ファイル作成ON
 
 [1]:https://github.com/mas-cli/mas
