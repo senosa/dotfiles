@@ -40,4 +40,6 @@ cask "visual-studio-code"
 # cask "vmware-fusion"
 cask "xnconvert"
 
+mas "AdGuard for Safari", id: 1440147259
 mas "Spark", id: 1176895641
+mas "uBlacklist for Safari", id: 1547912640
