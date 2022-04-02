@@ -63,6 +63,7 @@ curl -L https://raw.githubusercontent.com/senosa/dotfiles/master/bootstrap.sh | 
 	- 一般: Safari起動時: 最後のセッションの全ウインドウ
 	- 自動入力: ユーザ名とパスワードOFF (1Password使用)
 - カレンダー: 誕生日カレンダーを表示OFF
+- メモ: メニュー>編集>スペルと文法、自動置換: ぜんぶOFF
 - Google Chrome: GoogleアカウントでChromeプロフィールを同期
 	- デザイン: 終了時の警告メッセージOFF
 - Keka
