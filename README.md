@@ -24,7 +24,7 @@ curl -L https://raw.githubusercontent.com/senosa/dotfiles/master/bootstrap.sh | 
 	- Powerpack: アクティベート
 	- Advanced:
 		- Syncing: ~/Dropbox/Alfred
-		- Force Keyboard: ABC
+		- Force Keyboard: Romaji
 	- General:
 		- Hotkey: command+space
 		- Permissions: アクセシビリティ、フルディスクアクセス
@@ -50,7 +50,6 @@ curl -L https://raw.githubusercontent.com/senosa/dotfiles/master/bootstrap.sh | 
 		- ショートカット:
 			- キーボード: 次のウインドウを操作対象にするをoption+tab
 			- Spotlight: Spotlight検索を表示OFFまたは変更
-	- 省エネルギー: ディスプレイがオフのときにスリープさせないON
 - ~/.ssh
 - 各種ログイン
 	- Googleアカウント: SafariとChromeでログイン
