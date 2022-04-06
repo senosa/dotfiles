@@ -17,6 +17,7 @@ export LESS_TERMCAP_se=$'\E[0m'          # Ends standout-mode.
 export LESS_TERMCAP_so=$'\E[00;47;30m'   # Begins standout-mode.
 export LESS_TERMCAP_ue=$'\E[0m'          # Ends underline.
 export LESS_TERMCAP_us=$'\E[01;32m'      # Begins underline.
+export GOPATH=$HOME/.go
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
@@ -28,7 +29,7 @@ fi
 typeset -gU cdpath fpath mailpath path
 path=(
   $HOME/bin(N)
-  $HOME/go/bin(N)
+  $HOME/.go/bin(N)
   /usr/local/{bin,sbin}(N)
   $path
 )
