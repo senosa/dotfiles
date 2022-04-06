@@ -43,13 +43,15 @@ curl -L https://raw.githubusercontent.com/senosa/dotfiles/master/bootstrap.sh | 
 		- ポインタコントロール
 			- トラックパッドオプション
 				- スクロールの速さ: 一番速く
-				- ドラッグを有効: ３本指のドラッグ
+				- ドラッグを有効: ドラッグロックなし
 	- ソフトウェア・アップデート: 詳細: macOSアップデートOFF
 	- キーボード
 		- キーボード: リピート速く
 		- ショートカット:
 			- キーボード: 次のウインドウを操作対象にするをoption+tab
 			- Spotlight: Spotlight検索を表示OFFまたは変更
+	- トラックパッド
+		- ポイントとクリック: クリック: 一番弱く
 - ~/.ssh
 - 各種ログイン
 	- Googleアカウント: SafariとChromeでログイン
