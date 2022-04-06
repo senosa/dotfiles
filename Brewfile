@@ -18,6 +18,7 @@ brew "wget"
 
 cask "1password"
 cask "alfred"
+cask "bettertouchtool"
 cask "daisydisk"
 cask "dash"
 cask "dropbox"
