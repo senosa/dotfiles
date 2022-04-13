@@ -182,3 +182,5 @@ zstyle ':completion:*' verbose yes
 # zinit light mollifier/anyframe
 # bindkey '^xg' anyframe-widget-cd-ghq-repository
 # bindkey '^xr' anyframe-widget-execute-history
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
