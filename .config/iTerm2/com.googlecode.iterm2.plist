@@ -1007,7 +1007,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>130</integer>
+			<integer>100</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Boost</key>
@@ -1422,7 +1422,7 @@
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
-			<string>senosa</string>
+			<string>S</string>
 			<key>Non Ascii Font</key>
 			<string>MyricaM 14</string>
 			<key>Non-ASCII Anti Aliased</key>
@@ -1442,7 +1442,7 @@
 			<key>Screen</key>
 			<integer>-2</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1499,11 +1499,11 @@
 			<key>Thin Strokes</key>
 			<integer>1</integer>
 			<key>Title Components</key>
-			<integer>3</integer>
+			<integer>513</integer>
 			<key>Transparency</key>
 			<real>0.1532380319148936</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
