@@ -69,7 +69,7 @@ zle -N bracketed-paste bracketed-paste-url-magic
 # Aliases
 #
 
-alias cat='bat'
+alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 
 alias ls='exa --time-style=iso --color=always --icons'
 alias l='ls -1a'          # in one column, hidden files.
@@ -182,5 +182,5 @@ zstyle ':completion:*' verbose yes
 # zinit light mollifier/anyframe
 # bindkey '^xg' anyframe-widget-cd-ghq-repository
 # bindkey '^xr' anyframe-widget-execute-history
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+
+eval "$(anyenv init -)"
