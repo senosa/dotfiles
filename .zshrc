@@ -127,21 +127,7 @@ eval "$(starship init zsh)"
 
 # Prezto
 zinit wait lucid is-snippet for \
-  PZTM::terminal \
   PZTM::gnu-utility
-  # PZTM::utility
-  # PZTM::completion
-  # PZTM::homebrew
-  # PZTM::git
-
-# zstyle ':prezto:*:*' color 'yes'
-zstyle ':prezto:module:terminal' auto-title 'yes'
-zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
-zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
-zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
-
-# zinit ice wait"1" lucid submods'zsh-users/zsh-history-substring-search -> external'
-# zinit snippet PZTM::history-substring-search # depend on module/editor
 
 zinit wait lucid is-snippet as"completion" for \
   OMZP::docker/_docker \
