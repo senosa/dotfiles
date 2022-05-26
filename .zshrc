@@ -136,6 +136,7 @@ zinit wait lucid is-snippet as"completion" for \
 #
 # Zstyles
 #
+zstyle ':history-search-multi-word' highlight-color 'fg=yellow,bold,bg=gray'
 
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompcache"
