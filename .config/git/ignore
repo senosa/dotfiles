@@ -1,7 +1,6 @@
 .DS_Store
 .AppleDouble
 .LSOverride
-.vscode
 
 # Icon must ends with two \r.
 Icon
@@ -22,3 +21,10 @@ Icon
 # My temporary directory and files
 ,/
 ,*
+
+# vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
