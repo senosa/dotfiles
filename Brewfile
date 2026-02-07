@@ -5,7 +5,7 @@ tap "homebrew/cask-fonts"
 
 brew "bat"
 brew "coreutils"
-brew "exa"
+brew "eza"
 brew "ghq"
 brew "git"
 brew "go"

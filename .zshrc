@@ -71,7 +71,7 @@ zle -N bracketed-paste bracketed-paste-url-magic
 
 alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 
-alias ls='exa --time-style=iso --color=always --icons'
+alias ls='eza --time-style=iso --color=always --icons'
 alias l='ls -1a'          # in one column, hidden files.
 alias ll='ls -l'          # in long view.
 alias lT='ll -T'          # in long tree view.
