@@ -1,8 +1,5 @@
 cask_args appdir: "/Applications"
 
-tap "homebrew/cask"
-tap "homebrew/cask-fonts"
-
 brew "bat"
 brew "coreutils"
 brew "eza"
@@ -16,7 +13,7 @@ brew "source-highlight"
 brew "starship"
 brew "wget"
 
-cask "1password"
+cask "1password@7"
 cask "alfred"
 cask "bettertouchtool"
 cask "daisydisk"
@@ -24,8 +21,6 @@ cask "dash"
 cask "docker"
 cask "dropbox"
 cask "font-fira-code-nerd-font"
-cask "font-myrica"
-# cask "font-myricam"
 cask "fork"
 cask "fuwari"
 cask "google-chrome"
@@ -34,15 +29,10 @@ cask "karabiner-elements"
 cask "keka"
 # cask "omnigraffle"
 cask "path-finder"
-# cask "qlcolorcode"
-# cask "qlmarkdown"
-# cask "qlstephen"
-# cask "quicklook-json"
+cask "spark-email"
 cask "tableplus"
 cask "visual-studio-code"
-# cask "vmware-fusion"
 cask "xnconvert"
 
 mas "AdGuard for Safari", id: 1440147259
-mas "Spark", id: 1176895641
 mas "uBlacklist for Safari", id: 1547912640
