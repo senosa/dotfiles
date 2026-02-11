@@ -1,0 +1,17 @@
+font-size = 16
+font-family = UDEV Gothic 35NFLG
+
+# theme = Github Dark Default
+theme = Catppuccin Mocha
+background-opacity = 0.90
+background-blur-radius = 10
+
+macos-titlebar-proxy-icon = hidden
+window-height = 60
+window-width = 100
+window-padding-x = 8
+window-padding-y = 4
+window-padding-balance = true
+
+keybind = ctrl+m=text:\n
+keybind = ctrl+i=text:\t
