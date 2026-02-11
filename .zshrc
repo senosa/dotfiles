@@ -129,9 +129,11 @@ eval "$(starship init zsh)"
 zinit wait lucid is-snippet for \
   PZTM::gnu-utility
 
-zinit wait lucid is-snippet as"completion" for \
-  OMZP::docker/_docker \
-  OMZP::docker-compose/_docker-compose
+# Docker completion files not available via oh-my-zsh, removed
+# They would need to be installed separately or via docker-completion package
+# zinit wait lucid is-snippet as"completion" for \
+#   OMZP::docker/_docker \
+#   OMZP::docker-compose/_docker-compose
 
 #
 # Zstyles
@@ -170,4 +172,4 @@ zstyle ':completion:*' verbose yes
 # bindkey '^xg' anyframe-widget-cd-ghq-repository
 # bindkey '^xr' anyframe-widget-execute-history
 
-eval "$(anyenv init -)"
+# eval "$(anyenv init -)"
