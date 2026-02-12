@@ -1,17 +1,46 @@
+#
+# Appearance
+#
+
 font-size = 16
 font-family = UDEV Gothic 35NFLG
 
-# theme = Github Dark Default
 theme = Catppuccin Mocha
-background-opacity = 0.90
-background-blur-radius = 10
+background-opacity = 0.9
+background-blur-radius = 15
+# https://ghostty.org/docs/config/reference#unfocused-split-opacity
+# Sets the opacity of unfocused splits.
+# A value of 1.0 means no difference between focused and unfocused splits.
+unfocused-split-opacity = 0.55
 
-macos-titlebar-proxy-icon = hidden
-window-height = 60
+#
+# Window
+#
+
+window-height = 40
 window-width = 100
 window-padding-x = 8
 window-padding-y = 4
 window-padding-balance = true
 
+#
+# Keybinds
+#
+# https://ghostty.org/docs/config/reference#keybind
+# `ghostty +list-keybinds --default` to see all default keybinds.
 keybind = ctrl+m=text:\n
 keybind = ctrl+i=text:\t
+
+#
+# Clipboard
+#
+# https://ghostty.org/docs/config/reference#copy-on-select
+# Sets the behavior of text selection.
+# When set to "clipboard", selected text is automatically copied to the system clipboard.
+copy-on-select = clipboard
+
+#
+# OS Specific
+#
+
+macos-titlebar-proxy-icon = hidden
