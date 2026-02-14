@@ -14,7 +14,7 @@ brew "source-highlight"
 brew "starship"
 brew "wget"
 
-cask "1password@7"
+cask "1password"
 cask "alfred"
 cask "bettertouchtool"
 cask "daisydisk"
