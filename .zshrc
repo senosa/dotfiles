@@ -28,7 +28,7 @@ fi
 
 typeset -gU cdpath fpath mailpath path
 path=(
-  $HOME/bin(N)
+  $HOME/.local/bin(N)
   $HOME/.go/bin(N)
   /usr/local/{bin,sbin}(N)
   $path
