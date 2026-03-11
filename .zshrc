@@ -88,6 +88,8 @@ alias sl='ls'             # I often screw this up.
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
+alias rm='trash'
+
 #
 # Zinit
 #
