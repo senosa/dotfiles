@@ -1,10 +1,18 @@
 [
-  {
-    "name": "dotfiles",
-    "rootPath": "$home/dotfiles",
-    "paths": [],
-    "tags": [],
-    "enabled": true,
-    "profile": ""
-  }
+	{
+		"name": "dotfiles",
+		"rootPath": "$home/dotfiles",
+		"paths": [],
+		"tags": [],
+		"enabled": true,
+		"profile": ""
+	},
+	{
+		"name": "Bouquet",
+		"rootPath": "/Users/sen/src/github.com/senosa/Bouquet.code-workspace",
+		"paths": [],
+		"tags": [],
+		"enabled": true,
+		"profile": ""
+	}
 ]
