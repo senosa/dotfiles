@@ -162,20 +162,4 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose yes
 
 # ========================================================================
-
-# ### prezto/runcoms/zprofile
-# # Browser
-# if [[ "$OSTYPE" == darwin* ]]; then
-#   export BROWSER='open'
-# fi
-
-# ### anyframe
-# zinit light mollifier/anyframe
-# bindkey '^xg' anyframe-widget-cd-ghq-repository
-# bindkey '^xr' anyframe-widget-execute-history
-
-# eval "$(anyenv init -)"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(mise activate zsh)"
