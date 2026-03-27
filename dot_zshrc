@@ -1,0 +1,187 @@
+#
+# Exports
+#
+
+export HISTSIZE=290000 SAVEHIST=290000 HISTFILE=~/.zhistory
+
+export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
+
+export EDITOR='code --wait' VISUAL='code --wait' PAGER='less -RF'
+export LESS='-F -g -i -M -R -S -w -X -z-4 -j10'
+export LESS_TERMCAP_mb=$'\E[01;31m'      # Begins blinking.
+export LESS_TERMCAP_md=$'\E[01;31m'      # Begins bold.
+export LESS_TERMCAP_me=$'\E[0m'          # Ends mode.
+export LESS_TERMCAP_se=$'\E[0m'          # Ends standout-mode.
+export LESS_TERMCAP_so=$'\E[00;47;30m'   # Begins standout-mode.
+export LESS_TERMCAP_ue=$'\E[0m'          # Ends underline.
+export LESS_TERMCAP_us=$'\E[01;32m'      # Begins underline.
+if (( $#commands[(i)lesspipe(|.sh)] )); then
+  export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
+fi
+
+if [[ -z "$LANG" ]]; then
+  export LANG='ja_JP.UTF-8'
+fi
+
+typeset -gU cdpath fpath mailpath path
+path=(
+  $HOME/.local/bin(N)
+  /usr/local/{bin,sbin}(N)
+  $path
+)
+
+#
+# Setopts
+#
+
+setopt EXTENDED_HISTORY SHARE_HISTORY HIST_EXPIRE_DUPS_FIRST HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS HIST_FIND_NO_DUPS HIST_IGNORE_SPACE HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY HIST_BEEP
+
+setopt COMBINING_CHARS INTERACTIVE_COMMENTS RC_QUOTES
+unsetopt MAIL_WARNING
+
+setopt AUTO_CD AUTO_PUSHD PUSHD_IGNORE_DUPS PUSHD_SILENT PUSHD_TO_HOME
+setopt EXTENDED_GLOB
+unsetopt CLOBBER    # Do not overwrite existing files with > and >>.
+                    # Use >! and >>! to bypass.
+
+setopt COMPLETE_IN_WORD ALWAYS_TO_END PATH_DIRS AUTO_MENU AUTO_LIST
+setopt AUTO_PARAM_SLASH EXTENDED_GLOB NO_BEEP
+unsetopt MENU_COMPLETE FLOW_CONTROL
+
+#
+# Bindkeys
+#
+
+#
+# Autoloads
+#
+
+autoload -Uz bracketed-paste-url-magic
+zle -N bracketed-paste bracketed-paste-url-magic
+
+#
+# Aliases
+#
+
+alias cat="bat --theme='Catppuccin Mocha'"
+
+alias ls='eza --time-style=iso --color=always --icons'
+alias l='ls -1a'          # in one column, hidden files.
+alias ll='ls -l'          # in long view.
+alias lT='ll -T'          # in long tree view.
+alias lr='ll -R'          # in long view, recursively.
+alias la='ll -a'          # in long view, hidden files.
+alias lm='la | "$PAGER"'  # in long view, hidden files through pager.
+alias lx='ll -h -s=ext'       # sorted by extension.
+alias lk='ll -h -s=size'      # sorted by size, largest last.
+alias lt='ll -h -umU -s=mod'  # sorted by modified date, most recent last.
+alias lc='lt -h -umU -s=cr'   # sorted by created(changed) date, most recent last.
+alias lu='lt -h -umU -s=acc'  # sorted by accessed date, most recent last.
+alias sl='ls'             # I often screw this up.
+
+alias d='dirs -v'
+for index ({1..9}) alias "$index"="cd +${index}"; unset index
+
+alias rm='trash'
+
+#
+# Zstyles
+#
+zstyle ':completion::complete:*' use-cache on
+zstyle ':completion::complete:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompcache"
+
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+unsetopt CASE_GLOB
+
+zstyle ':completion:*:*:*:*:*' menu select=2
+zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:options' auto-description '%d'
+zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'
+zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
+zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
+zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
+zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' verbose yes
+
+# ========================================================================
+# mise
+eval "$(mise activate zsh)"
+
+# fzf
+source <(fzf --zsh)
+
+export FZF_DEFAULT_OPTS=$(cat <<'EOF'
+--color=fg:#a6adc8,fg+:#cdd6f4,bg:#181825,bg+:#313244
+--color=hl:#f5e0dc,hl+:#89dceb,info:#fab387,marker:#a6e3a1
+--color=prompt:#f38ba8,spinner:#cba6f7,pointer:#cba6f7,header:#94e2d5
+--color=border:#585b70,preview-bg:#1e1e2e,label:#aeaeae,query:#f9e2af
+--border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
+--marker=">" --pointer=">" --separator="─" --scrollbar="│"
+--layout="reverse"
+--height=40%
+--tmux=80%
+EOF
+)
+
+export FZF_CTRL_R_OPTS=$(cat <<"EOF"
+--preview '
+  echo {} \
+  | awk "{ sub(/\s*[0-9]*?\s*/, \"\"); gsub(/\\\\n/, \"\\n\"); print }" \
+  | bat --color=always --language=sh --style=plain
+'
+--preview-window 'down,40%,wrap'
+EOF
+)
+
+local find_ignore="find ./ -type d \( -name '.git' -o -name 'node_modules' \) -prune -o -type"
+
+export FZF_CTRL_T_COMMAND=$(cat <<"EOF"
+( (type fd > /dev/null) &&
+  fd --type f \
+    --strip-cwd-prefix \
+    --hidden \
+    --exclude '{.git,node_modules}/**' ) \
+  || $find_ignore f -print 2> /dev/null
+EOF
+)
+export FZF_CTRL_T_OPTS=$(cat << "EOF"
+--preview '
+  ( (type bat > /dev/null) &&
+    bat --color=always \
+      --theme="Catppuccin Mocha" \
+      --line-range :200 {} \
+    || (cat {} | head -200) ) 2> /dev/null
+'
+--preview-window 'down,60%,wrap,+3/2,~3'
+EOF
+)
+
+export FZF_ALT_C_COMMAND=$(cat <<"EOF"
+( (type fd > /dev/null) &&
+  fd --type d \
+    --strip-cwd-prefix \
+    --hidden \
+    --exclude '{.git,node_modules}/**' ) \
+  || $find_ignore d -print 2> /dev/null
+EOF
+)
+export FZF_ALT_C_OPTS="--preview 'tree -aC -L 1 {} | head -200'"
+
+# sheldon cache
+cache_dir=${XDG_CACHE_HOME:-$HOME/.cache}
+sheldon_cache="$cache_dir/sheldon.zsh"
+sheldon_toml="$HOME/.config/sheldon/plugins.toml"
+if [[ ! -r "$sheldon_cache" || "$sheldon_toml" -nt "$sheldon_cache" ]]; then
+  mkdir -p $cache_dir
+  sheldon source > $sheldon_cache
+fi
+source "$sheldon_cache"
+unset cache_dir sheldon_cache sheldon_toml
+
+# prompt
+eval "$(starship init zsh)"
