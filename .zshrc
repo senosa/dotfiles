@@ -2,13 +2,11 @@
 # Exports
 #
 
-typeset -A ZINIT
-ZINIT[ZCOMPDUMP_PATH]="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
-
 export HISTSIZE=290000 SAVEHIST=290000 HISTFILE=~/.zhistory
+
 export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
-export EDITOR='nano' VISUAL='nano' PAGER='less'
+export EDITOR='code --wait' VISUAL='code --wait' PAGER='less -RF'
 export LESS='-F -g -i -M -R -S -w -X -z-4 -j10'
 export LESS_TERMCAP_mb=$'\E[01;31m'      # Begins blinking.
 export LESS_TERMCAP_md=$'\E[01;31m'      # Begins bold.
@@ -17,7 +15,6 @@ export LESS_TERMCAP_se=$'\E[0m'          # Ends standout-mode.
 export LESS_TERMCAP_so=$'\E[00;47;30m'   # Begins standout-mode.
 export LESS_TERMCAP_ue=$'\E[0m'          # Ends underline.
 export LESS_TERMCAP_us=$'\E[01;32m'      # Begins underline.
-export GOPATH=$HOME/.go
 if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
@@ -29,7 +26,6 @@ fi
 typeset -gU cdpath fpath mailpath path
 path=(
   $HOME/.local/bin(N)
-  $HOME/.go/bin(N)
   /usr/local/{bin,sbin}(N)
   $path
 )
@@ -69,7 +65,7 @@ zle -N bracketed-paste bracketed-paste-url-magic
 # Aliases
 #
 
-alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
+alias cat="bat --theme='Catppuccin Mocha'"
 
 alias ls='eza --time-style=iso --color=always --icons'
 alias l='ls -1a'          # in one column, hidden files.
@@ -91,57 +87,8 @@ for index ({1..9}) alias "$index"="cd +${index}"; unset index
 alias rm='trash'
 
 #
-# Zinit
-#
-
-[[ ! -f ~/.local/share/zinit/zinit.git/zinit.zsh ]] && {
-    command mkdir -p ~/.local/share/zinit/zinit.git
-    command git clone https://github.com/zdharma-continuum/zinit.git ~/.local/share/zinit/zinit.git
-}
-
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-zinit light-mode for \
-  zdharma-continuum/z-a-as-monitor \
-  zdharma-continuum/z-a-patch-dl \
-  zdharma-continuum/z-a-submods \
-  zdharma-continuum/z-a-bin-gem-node \
-  zdharma-continuum/z-a-rust
-
-# Fast-syntax-highlighting & autosuggestions & completions
-zinit wait lucid for \
-  atinit'zicompinit; zicdreplay' \
-    zdharma-continuum/fast-syntax-highlighting \
-  atload'_zsh_autosuggest_start' \
-    zsh-users/zsh-autosuggestions \
-  blockf atpull'zinit creinstall -q .' \
-    zsh-users/zsh-completions
-
-# A few wait'1 plugins
-zinit wait'1' lucid for \
-  atinit'zstyle ":history-search-multi-word" page-size "11"' \
-    zdharma-continuum/history-search-multi-word \
-
-# prompt
-eval "$(starship init zsh)"
-
-# Prezto
-zinit wait lucid is-snippet for \
-  PZTM::gnu-utility
-
-# Docker completion files not available via oh-my-zsh, removed
-# They would need to be installed separately or via docker-completion package
-# zinit wait lucid is-snippet as"completion" for \
-#   OMZP::docker/_docker \
-#   OMZP::docker-compose/_docker-compose
-
-#
 # Zstyles
 #
-zstyle ':history-search-multi-word' highlight-color 'fg=yellow,bold,bg=gray'
-
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path "${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompcache"
 
@@ -162,4 +109,79 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose yes
 
 # ========================================================================
+# mise
 eval "$(mise activate zsh)"
+
+# fzf
+source <(fzf --zsh)
+
+export FZF_DEFAULT_OPTS=$(cat <<'EOF'
+--color=fg:#a6adc8,fg+:#cdd6f4,bg:#181825,bg+:#313244
+--color=hl:#f5e0dc,hl+:#89dceb,info:#fab387,marker:#a6e3a1
+--color=prompt:#f38ba8,spinner:#cba6f7,pointer:#cba6f7,header:#94e2d5
+--color=border:#585b70,preview-bg:#1e1e2e,label:#aeaeae,query:#f9e2af
+--border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
+--marker=">" --pointer=">" --separator="─" --scrollbar="│"
+--layout="reverse"
+--height=40%
+--tmux=80%
+EOF
+)
+
+export FZF_CTRL_R_OPTS=$(cat <<"EOF"
+--preview '
+  echo {} \
+  | awk "{ sub(/\s*[0-9]*?\s*/, \"\"); gsub(/\\\\n/, \"\\n\"); print }" \
+  | bat --color=always --language=sh --style=plain
+'
+--preview-window 'down,40%,wrap'
+EOF
+)
+
+local find_ignore="find ./ -type d \( -name '.git' -o -name 'node_modules' \) -prune -o -type"
+
+export FZF_CTRL_T_COMMAND=$(cat <<"EOF"
+( (type fd > /dev/null) &&
+  fd --type f \
+    --strip-cwd-prefix \
+    --hidden \
+    --exclude '{.git,node_modules}/**' ) \
+  || $find_ignore f -print 2> /dev/null
+EOF
+)
+export FZF_CTRL_T_OPTS=$(cat << "EOF"
+--preview '
+  ( (type bat > /dev/null) &&
+    bat --color=always \
+      --theme="Catppuccin Mocha" \
+      --line-range :200 {} \
+    || (cat {} | head -200) ) 2> /dev/null
+'
+--preview-window 'down,60%,wrap,+3/2,~3'
+EOF
+)
+
+export FZF_ALT_C_COMMAND=$(cat <<"EOF"
+( (type fd > /dev/null) &&
+  fd --type d \
+    --strip-cwd-prefix \
+    --hidden \
+    --exclude '{.git,node_modules}/**' ) \
+  || $find_ignore d -print 2> /dev/null
+EOF
+)
+export FZF_ALT_C_OPTS="--preview 'tree -aC -L 1 {} | head -200'"
+
+# sheldon cache
+cache_dir=${XDG_CACHE_HOME:-$HOME/.cache}
+sheldon_cache="$cache_dir/sheldon.zsh"
+sheldon_toml="$HOME/.config/sheldon/plugins.toml"
+if [[ ! -r "$sheldon_cache" || "$sheldon_toml" -nt "$sheldon_cache" ]]; then
+  mkdir -p $cache_dir
+  sheldon source > $sheldon_cache
+fi
+source "$sheldon_cache"
+unset cache_dir sheldon_cache sheldon_toml
+
+# prompt
+eval "$(starship init zsh)"
