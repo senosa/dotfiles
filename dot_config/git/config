@@ -1,0 +1,18 @@
+[user]
+	name = senosa
+	email = senosa@gmail.com
+[color]
+	ui = auto
+[core]
+[push]
+	default = simple
+[pull]
+	rebase = false
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[ghq]
+	root = ~/src
+[init]
+	defaultBranch = main
