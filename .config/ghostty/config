@@ -44,3 +44,4 @@ copy-on-select = clipboard
 #
 
 macos-titlebar-proxy-icon = hidden
+macos-option-as-alt = true
