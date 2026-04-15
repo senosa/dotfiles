@@ -3,7 +3,6 @@ experimental = true
 disable_backends = ["asdf", "vfox"]
 
 [tools]
-"aqua:rossmacarthur/sheldon" = "latest"
 deno = "2.7"
 gallery-dl = "latest"
 go = "1.26"
