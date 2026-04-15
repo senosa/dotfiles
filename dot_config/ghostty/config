@@ -7,7 +7,7 @@ font-family = UDEV Gothic 35NFLG
 
 theme = Catppuccin Mocha
 background-opacity = 0.7
-background-blur = 0
+background-blur = macos-glass-regular
 # https://ghostty.org/docs/config/reference#unfocused-split-opacity
 # Sets the opacity of unfocused splits.
 # A value of 1.0 means no difference between focused and unfocused splits.
