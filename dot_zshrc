@@ -111,16 +111,26 @@ eval "$(mise activate zsh)"
 # fzf
 source <(fzf --zsh)
 
+local find_ignore="find ./ -type d \( -name '.git' -o -name 'node_modules' \) -prune -o -type"
+export FZF_DEFAULT_COMMAND=$(cat <<"EOF"
+( (type fd > /dev/null) &&
+  fd --type f \
+    --strip-cwd-prefix \
+    --hidden \
+    --exclude '{.git,node_modules}/**' ) \
+  || $find_ignore f -print 2> /dev/null
+EOF
+)
 export FZF_DEFAULT_OPTS=$(cat <<'EOF'
 --color=fg:#a6adc8,fg+:#cdd6f4,bg:#181825,bg+:#313244
 --color=hl:#f5e0dc,hl+:#89dceb,info:#fab387,marker:#a6e3a1
 --color=prompt:#f38ba8,spinner:#cba6f7,pointer:#cba6f7,header:#94e2d5
 --color=border:#585b70,preview-bg:#1e1e2e,label:#aeaeae,query:#f9e2af
---border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
---marker=">" --pointer=">" --separator="─" --scrollbar="│"
---layout="reverse"
---height=40%
---tmux=80%
+--border="rounded" --border-label="" --preview-window="border-rounded"
+--prompt="> "
+--height 60%
+--layout reverse
+--bind ctrl-d:preview-page-down,ctrl-u:preview-page-up
 EOF
 )
 
@@ -134,17 +144,7 @@ export FZF_CTRL_R_OPTS=$(cat <<"EOF"
 EOF
 )
 
-local find_ignore="find ./ -type d \( -name '.git' -o -name 'node_modules' \) -prune -o -type"
-
-export FZF_CTRL_T_COMMAND=$(cat <<"EOF"
-( (type fd > /dev/null) &&
-  fd --type f \
-    --strip-cwd-prefix \
-    --hidden \
-    --exclude '{.git,node_modules}/**' ) \
-  || $find_ignore f -print 2> /dev/null
-EOF
-)
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS=$(cat << "EOF"
 --preview '
   ( (type bat > /dev/null) &&
