@@ -6,7 +6,7 @@ export HISTSIZE=290000 SAVEHIST=290000 HISTFILE=~/.zhistory
 
 export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
-export EDITOR='code --wait' VISUAL='code --wait' PAGER='less -RF'
+export EDITOR='code --wait' VISUAL='code --wait' PAGER='less'
 export LESS='-F -g -i -M -R -S -w -X -z-4 -j10'
 export LESS_TERMCAP_mb=$'\E[01;31m'      # Begins blinking.
 export LESS_TERMCAP_md=$'\E[01;31m'      # Begins bold.
@@ -67,19 +67,16 @@ zle -N bracketed-paste bracketed-paste-url-magic
 
 alias cat="bat --theme='Catppuccin Mocha'"
 
-alias ls='eza --time-style=iso --color=always --icons'
-alias l='ls -1a'          # in one column, hidden files.
-alias ll='ls -l'          # in long view.
-alias lT='ll -T'          # in long tree view.
-alias lr='ll -R'          # in long view, recursively.
-alias la='ll -a'          # in long view, hidden files.
-alias lm='la | "$PAGER"'  # in long view, hidden files through pager.
-alias lx='ll -h -s=ext'       # sorted by extension.
-alias lk='ll -h -s=size'      # sorted by size, largest last.
-alias lt='ll -h -umU -s=mod'  # sorted by modified date, most recent last.
-alias lc='lt -h -umU -s=cr'   # sorted by created(changed) date, most recent last.
-alias lu='lt -h -umU -s=acc'  # sorted by accessed date, most recent last.
-alias sl='ls'             # I often screw this up.
+alias ls='eza --long --time-style=iso --color=always --icons'
+alias lsa='ls -a'             # including hidden.
+alias lt='ls -T -L=2'         # in tree view.
+alias lta='lt -a'             # in tree view, including hidden.
+unalias ll 2>/dev/null
+ll() {                        # in tree view, all files through pager.
+  lta "$@" | ${PAGER:-less}
+}
+alias lm='ls -h -umU -s=mod'  # sorted by modified date, most recent last.
+alias sl='ls'                 # I often screw this up.
 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
