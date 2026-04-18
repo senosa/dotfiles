@@ -67,7 +67,7 @@ zle -N bracketed-paste bracketed-paste-url-magic
 
 alias cat="bat --theme='Catppuccin Mocha'"
 
-alias ls='eza --time-style=iso --icons --classify'
+alias ls='eza --time-style=iso --icons=auto --classify=auto'
 alias l='ls'
 alias la='ls -a'              # including hidden.
 alias ll='ls -lh --git'       # in long format.
