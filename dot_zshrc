@@ -67,15 +67,14 @@ zle -N bracketed-paste bracketed-paste-url-magic
 
 alias cat="bat --theme='Catppuccin Mocha'"
 
-alias ls='eza --time-style=iso --icons=auto --classify=auto'
+alias ls='eza --time-style=iso --icons=auto --classify=auto --group-directories-first'
 alias l='ls'
-alias la='ls -a'              # including hidden.
-alias ll='ls -lh --git'       # in long format.
-alias lla='ll -a'             # in long format, including hidden.
-alias lt='ll -T -L=2'         # in tree view.
-alias lta='lt -a'             # in tree view, including hidden.
-alias lm='ll -umU -s=mod'     # sorted by modified date, most recent last.
-alias sl='ls'                 # I often screw this up.
+alias la='ls -a'
+alias ll='ls -lh --git'    # headers
+alias lla='ll -a'
+alias lt='ll -T -L=2'      # in tree view.
+alias lta='lt -a'
+alias lm='ll -umU -s=mod'  # sorted by modified date, most recent last.
 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
