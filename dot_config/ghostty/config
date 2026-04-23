@@ -40,5 +40,7 @@ copy-on-select = clipboard
 # OS Specific
 #
 
+macos-window-buttons = hidden
+macos-titlebar-style = tabs
 macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
