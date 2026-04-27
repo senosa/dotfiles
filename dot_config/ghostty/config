@@ -35,10 +35,8 @@ split-divider-color = #6c7086
 # Window
 #
 
-window-height = 60
-window-width = 120
 window-padding-x = 8
-window-padding-y = 4
+# window-padding-y = 8
 window-padding-balance = true
 
 #
