@@ -71,10 +71,9 @@ zle -N bracketed-paste bracketed-paste-url-magic
 
 alias cat='bat'
 
-alias ls='eza --time-style=iso --icons=auto --classify=auto --group-directories-first'
-alias l='ls'
-alias la='ls -a'
-alias ll='ls -lh --git'    # headers
+alias l='eza --time-style=iso --icons=auto --classify=auto --group-directories-first'
+alias la='l -a'
+alias ll='l -l --git'
 alias lla='ll -a'
 alias lt='ll -T -L=2'      # in tree view.
 alias lta='lt -a'
