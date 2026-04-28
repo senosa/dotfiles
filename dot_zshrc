@@ -75,7 +75,7 @@ alias ll='l -l --git'
 alias lla='ll -a'
 alias lt='ll -T -L=2'      # in tree view.
 alias lta='lt -a'
-alias lm='ll -umU -s=mod'  # sorted by modified date, most recent last.
+alias lm='ll -humU -s=mod'  # sorted by modified date, most recent last with headers
 
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
