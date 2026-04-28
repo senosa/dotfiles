@@ -69,8 +69,6 @@ zle -N bracketed-paste bracketed-paste-url-magic
 # Aliases
 #
 
-alias cat='bat'
-
 alias l='eza --time-style=iso --icons=auto --classify=auto --group-directories-first'
 alias la='l -a'
 alias ll='l -l --git'
