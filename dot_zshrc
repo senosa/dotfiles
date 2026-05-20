@@ -65,6 +65,7 @@ setopt IGNORE_EOF
 
 autoload -Uz bracketed-paste-url-magic
 zle -N bracketed-paste bracketed-paste-url-magic
+autoload -Uz zmv
 
 #
 # Aliases
