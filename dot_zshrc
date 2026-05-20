@@ -183,3 +183,15 @@ unset cache_dir sheldon_cache sheldon_toml
 
 # prompt
 eval "$(starship init zsh)"
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+# yazi
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd < "$tmp"
+  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+  command rm -f -- "$tmp"
+}
