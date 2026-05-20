@@ -30,7 +30,7 @@ background-opacity = 0.8
 # background-blur = 20
 # background-blur = macos-glass-regular
 background-blur = macos-glass-clear
-split-divider-color = #6c7086
+split-divider-color = #babbf1
 
 #
 # Window
