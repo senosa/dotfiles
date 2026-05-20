@@ -1,0 +1,7 @@
+[tabs]
+active   = { fg = "#1e1e2e", bg = "#89b4fa" }
+inactive = { fg = "#89b4fa", bg = "#313244" }
+
+[mode]
+normal_main = { fg = "#1e1e2e", bg = "#89b4fa" }
+normal_alt  = { fg = "#89b4fa", bg = "#313244" }
