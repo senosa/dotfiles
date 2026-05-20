@@ -26,7 +26,7 @@ theme = Catppuccin Mocha
 # palette = 14=#6bd7ca
 # palette = 15=#bac2de
 
-background-opacity = 0.8
+# background-opacity = 0.8
 # background-blur = 20
 # background-blur = macos-glass-regular
 background-blur = macos-glass-clear
