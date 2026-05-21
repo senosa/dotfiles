@@ -1,4 +1,39 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Grep",
+      "Glob",
+      "Bash(npm run *)",
+      "Bash(yarn *)",
+      "Bash(pnpm *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Edit(src/*)",
+      "Edit(tests/*)"
+    ],
+    "deny": [
+      "Edit(.env*)",
+      "Edit(*.pem)",
+      "Edit(*.key)",
+      "Write(.env*)",
+      "Write(*.pem)",
+      "Write(*.key)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)"
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "filesystem": {
+      "denyRead": ["~/"],
+      "allowRead": ["."]
+    }
+  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.py"
