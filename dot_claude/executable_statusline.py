@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Status line:
-  Line 1: model │ cwd branch │ +add/-del
-  Line 2: Cx │ 5h (h:mm) │ 7d (Nd h:mm)
+Line 1: model │ cwd branch │ +add/-del
+Line 2: Ctx │ 5h (h:mm) │ 7d (Nd h:mm)
 """
 
 import json
@@ -13,26 +13,27 @@ from datetime import datetime, timezone
 
 data = json.load(sys.stdin)
 
-BRAILLE  = " ⣀⣄⣤⣦⣶⣷⣿"
-R        = "\033[0m"
+BRAILLE = " ⣀⣄⣤⣦⣶⣷⣿"
+R = "\033[0m"
 # Catppuccin Mocha
-TEXT     = "\033[38;2;205;214;244m"   # #cdd6f4  model など主テキスト
-SUBTEXT1 = "\033[38;2;186;194;222m"   # #bac2de  branch
-SUBTEXT0 = "\033[38;2;166;173;200m"   # #a6adc8  ラベル (Cx / 5h / 7d)
-OVERLAY1 = "\033[38;2;127;132;156m"   # #7f849c  残り時間 (h:mm)
-OVERLAY0 = "\033[38;2;108;112;134m"   # #6c7086  │ セパレータ
-GREEN    = "\033[38;2;166;227;161m"   # #a6e3a1  +insertions
-PINK     = "\033[38;2;235;160;172m"   # #eba0ac  -deletions
-MAUVE    = "\033[38;2;203;166;247m"   # #cba6f7  cwd
-SEP      = f" {OVERLAY0}│{R} "
+TEXT = "\033[38;2;205;214;244m"  # #cdd6f4  model など主テキスト
+SUBTEXT1 = "\033[38;2;186;194;222m"  # #bac2de  branch
+SUBTEXT0 = "\033[38;2;166;173;200m"  # #a6adc8  ラベル (Ctx / 5h / 7d)
+OVERLAY1 = "\033[38;2;127;132;156m"  # #7f849c  残り時間 (h:mm)
+OVERLAY0 = "\033[38;2;108;112;134m"  # #6c7086  │ セパレータ
+GREEN = "\033[38;2;166;227;161m"  # #a6e3a1  +insertions
+PINK = "\033[38;2;235;160;172m"  # #eba0ac  -deletions
+MAUVE = "\033[38;2;203;166;247m"  # #cba6f7  cwd
+SEP = f" {OVERLAY0}│{R} "
 
 
 def gradient(pct):
     colors = [
-        (0,   (166, 227, 161)),
-        (25,  (249, 226, 175)),
-        (50,  (250, 179, 135)),
-        (75,  (235, 160, 172)),
+        (0, (180, 190, 254)),
+        (20, (116, 199, 236)),
+        (40, (166, 227, 161)),
+        (60, (249, 226, 175)),
+        (80, (250, 179, 135)),
         (100, (243, 139, 168)),
     ]
     pct = min(max(pct, 0), 100)
@@ -54,7 +55,7 @@ def braille_bar(pct, width=8):
     bar = ""
     for i in range(width):
         seg_start = i / width
-        seg_end   = (i + 1) / width
+        seg_end = (i + 1) / width
         if level >= seg_end:
             bar += BRAILLE[7]
         elif level <= seg_start:
@@ -84,9 +85,9 @@ def remaining_str(resets_at_val):
         if delta.total_seconds() <= 0:
             return ""
         total_min = int(delta.total_seconds() // 60)
-        days  = total_min // (24 * 60)
+        days = total_min // (24 * 60)
         hours = (total_min % (24 * 60)) // 60
-        mins  = total_min % 60
+        mins = total_min % 60
         if days > 0:
             return f" {OVERLAY1}({days}d {hours}:{mins:02d}){R}"
         return f" {OVERLAY1}({hours}:{mins:02d}){R}"
@@ -96,39 +97,45 @@ def remaining_str(resets_at_val):
 
 # ── Line 1: model │ cwd branch │ +add/-del ─────────────────────────
 
-model    = data.get("model", {}).get("display_name", "Claude")
-cwd_raw  = data.get("cwd") or os.getcwd()
+model = data.get("model", {}).get("display_name", "Claude")
+cwd_raw = data.get("cwd") or os.getcwd()
 cwd_name = os.path.basename(cwd_raw.rstrip("/"))
 
 git_data = data.get("git") or {}
-branch   = git_data.get("branch")
+branch = git_data.get("branch")
 if not branch:
     try:
         r = subprocess.run(
             ["git", "branch", "--show-current"],
-            capture_output=True, text=True, cwd=cwd_raw, timeout=2,
+            capture_output=True,
+            text=True,
+            cwd=cwd_raw,
+            timeout=2,
         )
         branch = r.stdout.strip() or None
     except Exception:
         pass
 
 diff_stats = git_data.get("diff_stats") or {}
-ins  = diff_stats.get("insertions")
+ins = diff_stats.get("insertions")
 dels = diff_stats.get("deletions")
 if ins is None and dels is None:
     try:
         r = subprocess.run(
             ["git", "diff", "--shortstat", "HEAD"],
-            capture_output=True, text=True, cwd=cwd_raw, timeout=2,
+            capture_output=True,
+            text=True,
+            cwd=cwd_raw,
+            timeout=2,
         )
         m_i = re.search(r"(\d+) insertion", r.stdout)
-        m_d = re.search(r"(\d+) deletion",  r.stdout)
-        ins  = int(m_i.group(1)) if m_i else 0
+        m_d = re.search(r"(\d+) deletion", r.stdout)
+        ins = int(m_i.group(1)) if m_i else 0
         dels = int(m_d.group(1)) if m_d else 0
     except Exception:
         pass
 
-cwd_part   = f"{MAUVE}{cwd_name}{R}"
+cwd_part = f"{MAUVE}{cwd_name}{R}"
 cwd_branch = f"{cwd_part} {SUBTEXT1}{branch}{R}" if branch else cwd_part
 
 l1 = [f"{TEXT}{model}{R}", cwd_branch]
@@ -137,21 +144,21 @@ if ins is not None or dels is not None:
 
 line1 = SEP.join(l1)
 
-# ── Line 2: Cx │ 5h (h:mm) │ 7d (Nd h:mm) ───────────────────────────
+# ── Line 2: Ctx │ 5h (h:mm) │ 7d (Nd h:mm) ───────────────────────────
 
 l2 = []
 
 ctx = data.get("context_window", {}).get("used_percentage")
 if ctx is not None:
-    l2.append(fmt("Cx", ctx))
+    l2.append(fmt("Ctx", ctx))
 
 five_d = data.get("rate_limits", {}).get("five_hour") or {}
-five   = five_d.get("used_percentage")
+five = five_d.get("used_percentage")
 if five is not None:
     l2.append(fmt("5h", five, remaining_str(five_d.get("resets_at"))))
 
 week_d = data.get("rate_limits", {}).get("seven_day") or {}
-week   = week_d.get("used_percentage")
+week = week_d.get("used_percentage")
 if week is not None:
     l2.append(fmt("7d", week, remaining_str(week_d.get("resets_at"))))
 

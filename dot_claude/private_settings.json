@@ -32,7 +32,9 @@
     "command": "~/.claude/statusline.py"
   },
   "enabledPlugins": {
-    "gitkraken-hooks@gitkraken": true
+    "gitkraken-hooks@gitkraken": true,
+    "context7@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "gitkraken": {
@@ -41,6 +43,19 @@
         "path": "/Users/sen/.claude/plugins/marketplaces/gitkraken"
       }
     }
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path // empty' | { read -r f; [[ \"$f\" == *.py ]] && ruff format \"$f\"; } 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
   },
   "language": "Japanese",
   "tui": "fullscreen",

@@ -4,6 +4,8 @@
 
 # font-size = 14
 font-family = UDEV Gothic 35NFLG
+adjust-cell-height = 6
+font-thicken
 
 theme = Catppuccin Mocha
 # palette = 8=#7f849c
