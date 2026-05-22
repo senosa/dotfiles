@@ -10,7 +10,7 @@
     "inactive": "#a6adc8",
     "inactiveShimmer": "#bac2de",
     "subtle": "#585b70",
-    "suggestion": "#b4befe",
+    "suggestion": "#89dceb",
     "permission": "",
     "permissionShimmer": "",
     "remember": "",
@@ -23,8 +23,8 @@
 
     "promptBorder": "#6c7086",
     "promptBorderShimmer": "",
-    "planMode": "#94e2d5",
-    "autoAccept": "#cba6f7",
+    "planMode": "",
+    "autoAccept": "",
     "bashBorder": "",
     "ide": "",
     "fastMode": "",
@@ -37,7 +37,7 @@
     "diffAddedWord": "#4e6356",
     "diffRemovedWord": "#694559",
 
-    "userMessageBackground": "#313244",
+    "userMessageBackground": "#11111b",
     "userMessageBackgroundHover": "",
     "messageActionsBackground": "",
     "bashMessageBackgroundColor": "",
