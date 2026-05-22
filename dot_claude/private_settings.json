@@ -27,13 +27,6 @@
       "Read(./secrets/**)"
     ]
   },
-  "sandbox": {
-    "enabled": true,
-    "filesystem": {
-      "denyRead": ["~/"],
-      "allowRead": ["."]
-    }
-  },
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.py"
