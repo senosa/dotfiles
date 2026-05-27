@@ -3,12 +3,8 @@
 #
 
 # font-size = 14
-font-family = UDEV Gothic 35NFLG
-adjust-cell-height = 6
-font-thicken
-
+font-family = UDEV Gothic NFLG
 theme = Catppuccin Mocha
-# palette = 8=#7f849c
 
 # default palette
 # palette = 0=#45475a
@@ -32,7 +28,7 @@ theme = Catppuccin Mocha
 # background-blur = 20
 # background-blur = macos-glass-regular
 background-blur = macos-glass-clear
-split-divider-color = #babbf1
+split-divider-color = #b4befe
 
 #
 # Window
@@ -57,6 +53,8 @@ keybind = ctrl+i=text:\t
 # Sets the behavior of text selection.
 # When set to "clipboard", selected text is automatically copied to the system clipboard.
 copy-on-select = clipboard
+
+mouse-hide-while-typing = true
 
 #
 # OS Specific
