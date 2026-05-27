@@ -57,6 +57,16 @@ chezmoi cd
 
 全ツールで **Catppuccin Mocha** カラーテーマを統一使用。新しいツール設定を追加する際もこのテーマに合わせる。
 
+## コミットスタイル
+
+Conventional Commits の type (`feat:`/`chore:` 等) は使わない。`scope: 説明` 形式で日本語記述。
+
+```
+ghostty: フォント変更・マウス非表示設定を追加
+starship: プロンプトレイアウトの改善
+zsh: プロンプトキャッシュ有効化の環境変数を追加
+```
+
 ## sheldon プラグインの更新
 
 ```sh
