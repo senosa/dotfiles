@@ -21,7 +21,7 @@
     "dark": "Catppuccin Mocha"
   },
   "icon_theme": "Catppuccin Mocha",
-  "buffer_font_family": "UDEV Gothic NFLG",
+  "buffer_font_family": "UDEV Gothic 35NFLG",
 
   // Keymap
   "base_keymap": "VSCode",
@@ -76,6 +76,7 @@
   "terminal": {
     "copy_on_select": true,
     "font_family": "UDEV Gothic NFLG",
+    "font_size": 13,
     // "line_height": "comfortable",
     "cursor_shape": "bar",
     "option_as_meta": true
