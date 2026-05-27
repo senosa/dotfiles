@@ -27,23 +27,6 @@
       "Read(./secrets/**)"
     ]
   },
-  "statusLine": {
-    "type": "command",
-    "command": "~/.claude/statusline.py"
-  },
-  "enabledPlugins": {
-    "gitkraken-hooks@gitkraken": true,
-    "context7@claude-plugins-official": true,
-    "commit-commands@claude-plugins-official": true
-  },
-  "extraKnownMarketplaces": {
-    "gitkraken": {
-      "source": {
-        "source": "directory",
-        "path": "/Users/sen/.claude/plugins/marketplaces/gitkraken"
-      }
-    }
-  },
   "hooks": {
     "PostToolUse": [
       {
@@ -56,6 +39,25 @@
         ]
       }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.py"
+  },
+  "enabledPlugins": {
+    "gitkraken-hooks@gitkraken": true,
+    "context7@claude-plugins-official": true,
+    "commit-commands@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true,
+    "exa@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "gitkraken": {
+      "source": {
+        "source": "directory",
+        "path": "/Users/sen/.claude/plugins/marketplaces/gitkraken"
+      }
+    }
   },
   "language": "Japanese",
   "tui": "fullscreen",
