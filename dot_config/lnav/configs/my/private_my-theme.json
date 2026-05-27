@@ -81,6 +81,7 @@
           "overlay2": "#9399b2",
           "overlay1": "#7f849c",
           "overlay0": "#6c7086",
+          "rosewater": "#f5e0dc",
           "mauve": "#cba6f7",
           "red": "#f38ba8",
           "maroon": "#eba0ac",
@@ -88,6 +89,9 @@
           "yellow": "#f9e2af",
           "green": "#a6e3a1",
           "teal": "#94e2d5",
+          "blue": "#89b4fa",
+          "lavendar": "#b4befe",
+          "surface2": "#585b70",
           "surface1": "#45475a",
           "surface0": "#313244",
           "base": "#1e1e2e",
@@ -96,17 +100,18 @@
         "styles": {
           "text": {
             "color": "$text",
-            "background-color": "Black"
+            "background-color": "$base"
           },
           "selected-text": {
-            "background-color": "DarkCyan"
+            "color": "$base",
+            "background-color": "blue"
           },
           "identifier": {
             "background-color": "",
             "color": "semantic()"
           },
           "fuzzy-match": {
-            "color": "Olive",
+            "color": "$yellow",
             "underline": true,
             "bold": true
           },
@@ -133,9 +138,13 @@
             "color": "Olive",
             "bold": true
           },
+          "cursor-line": {
+            "color": "$blue",
+            "background-color": "$surface1"
+          },
           "disabled-cursor-line": {
-            "color": "Cyan1",
-            "background-color": "#5f005f"
+            "color": "$subtext0",
+            "background-color": "$surface0"
           },
           "adjusted-time": {
             "color": "Maroon"
@@ -162,11 +171,11 @@
             "color": "Purple"
           },
           "scrollbar": {
-            "color": "Black",
-            "background-color": "$surface0"
+            "color": "$base",
+            "background-color": "$overlay0"
           },
           "timeline-bar": {
-            "background-color": "Teal"
+            "background-color": "$lavendar"
           },
           "focused": {
             "color": "Black",
@@ -323,7 +332,7 @@
         },
         "status-styles": {
           "text": {
-            "color": "$overlay2",
+            "color": "$subtext1",
             "background-color": "$surface0"
           },
           "warn": {
@@ -361,8 +370,9 @@
             "color": "$text",
             "background-color": "Black"
           },
+
           "inactive": {
-            "color": "$overlay0",
+            "color": "$subtext0",
             "background-color": "$surface1"
           },
           "inactive-warn": {
@@ -374,12 +384,12 @@
             "background-color": "$surface1"
           },
           "title-hotkey": {
-            "color": "Teal",
+            "color": "$base",
             "background-color": "$peach",
             "underline": true
           },
           "hotkey": {
-            "color": "Purple",
+            "color": "$blue",
             "underline": true,
             "bold": true
           }
