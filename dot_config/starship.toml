@@ -1,9 +1,11 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](fg:surface2)\
+[](fg:base bg:surface0)\
+[ ](fg:surface0 bg:surface1)\
 $os\
 $username\
+[](fg:surface1 bg:surface2)\
 $time\
 [](fg:surface2 bg:surface1)\
 $directory\
@@ -28,7 +30,7 @@ $conda\
 $status\
 [](fg:surface1 bg:surface2)\
 $cmd_duration\
-[](fg:surface2)\
+[](fg:surface2 bg:base)\
 $line_break\
 $character"""
 
@@ -36,7 +38,7 @@ palette = 'catppuccin_mocha'
 
 [os]
 disabled = false
-style = "bg:surface2 fg:base"
+style = "bg:surface1 fg:subtext0"
 
 [os.symbols]
 Windows = ""
@@ -60,17 +62,17 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 
+[username]
+show_always = true
+style_user = "bg:surface1 fg:subtext0"
+style_root = "bg:surface1 fg:red"
+format = '[ $user ]($style)'
+
 [time]
 disabled = false
 time_format = "%T"
 style = "bg:surface2"
-format = '[  $time ]($style)'
-
-[username]
-show_always = true
-style_user = "bg:surface2 fg:base"
-style_root = "bg:surface2 fg:red"
-format = '[ $user]($style)'
+format = '[   $time ]($style)'
 
 [directory]
 style = "bg:surface1 fg:mauve"
@@ -141,7 +143,7 @@ symbol = "[  $status $common_meaning ](fg:red bg:surface1)"
 [cmd_duration]
 show_milliseconds = true
 style = "bg:surface2"
-format = "[ $duration]($style)"
+format = "[ $duration ]($style)"
 disabled = false
 show_notifications = false
 min_time_to_notify = 45000
