@@ -10,6 +10,9 @@ IMPORTANT:
 - 質問は優先度順に、1回あたり 3〜7 個。まずブロッカー（答えがないと進めない）を先に。
 - 仕様決めが必要な箇所は、必ず「複数案 + 推奨案 + トレードオフ」を提示して選んでもらう。
 
+# 応答言語
+- 常に日本語で回答する。コード・コマンド・識別子は原文のまま維持する。
+
 # Git operations
 - git commit、amend、rebase、reset、force-push、branch削除、PR作成は、明示依頼があった時だけ実行する。
-- Conventional Commits を意識して commit する。commit メッセージは日本語で記述する。
+- commit メッセージは日本語で記述する。形式はプロジェクトの CLAUDE.md に従い、指定がない場合は `type(scope): 説明` の Conventional Commits 形式を使う。
