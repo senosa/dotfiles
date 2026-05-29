@@ -51,7 +51,9 @@ chezmoi cd
 | `dot_config/yazi/` | `~/.config/yazi/` | ファイルマネージャー設定 |
 | `dot_config/btop/` | `~/.config/btop/` | システムモニター設定 |
 | `dot_config/karabiner/` | `~/.config/karabiner/` | キーボードカスタマイズ |
-| `dot_claude/` | `~/.claude/` | Claude Code 設定 |
+| `dot_config/lnav/` | `~/.config/lnav/` | ログビューア設定（Catppuccin テーマ） |
+| `dot_config/zed/` | `~/.config/zed/` | Zed エディタ設定 |
+| `dot_claude/` | `~/.claude/` | Claude Code 設定（`CLAUDE.md` は全プロジェクト共通のグローバル指示） |
 
 ## テーマ・スタイル
 
