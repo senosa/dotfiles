@@ -8,7 +8,14 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // General
+  "collaboration_panel": {
+    "button": false
+  },
+  "project_panel": {
+    "dock": "left"
+  },
   "git_panel": {
+    "dock": "left",
     "tree_view": false
   },
   "tab_size": 2,

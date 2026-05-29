@@ -18,40 +18,4 @@
       // "j k": "vim::NormalBefore"
     },
   },
-  {
-    "context": "SettingsWindow",
-    "bindings": {
-      "f13": [
-        "settings_editor::FocusFile",
-        2
-      ]
-    }
-  },
-  {
-    "context": "SettingsWindow",
-    "unbind": {
-      "ctrl-3": [
-        "settings_editor::FocusFile",
-        2
-      ]
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "f13": [
-        "pane::ActivateItem",
-        2
-      ]
-    }
-  },
-  {
-    "context": "Pane",
-    "unbind": {
-      "ctrl-3": [
-        "pane::ActivateItem",
-        2
-      ]
-    }
-  }
 ]
