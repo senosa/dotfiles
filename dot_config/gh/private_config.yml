@@ -1,0 +1,3 @@
+version: "1"
+pager: cat
+editor: code --wait
