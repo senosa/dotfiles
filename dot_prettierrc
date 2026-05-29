@@ -1,0 +1,11 @@
+{
+  "overrides": [
+    {
+      "files": ["*.jsonc", "**/zed/**/*.json"],
+      "options": {
+        "parser": "json",
+        "trailingComma": "none"
+      }
+    }
+  ]
+}
