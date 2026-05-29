@@ -53,6 +53,7 @@ chezmoi cd
 | `dot_config/mise/` | `~/.config/mise/` | 言語バージョン管理（Node/Python/Go/Rust/Deno） |
 | `dot_config/yazi/` | `~/.config/yazi/` | ファイルマネージャー設定 |
 | `dot_config/btop/` | `~/.config/btop/` | システムモニター設定 |
+| `dot_config/gh/` | `~/.config/gh/` | GitHub CLI 設定 |
 | `dot_config/karabiner/` | `~/.config/karabiner/` | キーボードカスタマイズ |
 | `dot_config/lnav/` | `~/.config/lnav/` | ログビューア設定（Catppuccin テーマ） |
 | `dot_config/zed/` | `~/.config/zed/` | Zed エディタ設定 |
