@@ -31,6 +31,9 @@ chezmoi apply ~/.zshrc
 # ホームにあるファイルをソースへ追加
 chezmoi add ~/.config/foo/bar
 
+# ホーム側で編集したファイルをソースへ反映（管理済みファイルの逆同期）
+chezmoi re-add ~/.config/foo/bar
+
 # 管理ファイルを直接編集（apply 不要）
 chezmoi edit ~/.zshrc
 
