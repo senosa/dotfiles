@@ -1,0 +1,2 @@
+# zsh 固有の構文を shellcheck がパースできないため無効化
+disable=SC1009,SC1072,SC1073
