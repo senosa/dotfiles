@@ -1,0 +1,4 @@
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never --true-color=auto --dark --line-numbers --width=variable --navigate
