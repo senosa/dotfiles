@@ -6,6 +6,7 @@ export HISTSIZE=290000 SAVEHIST=290000 HISTFILE=~/.zhistory
 
 export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
+export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR='zed --wait' VISUAL='zed --wait' PAGER='less'
 export BAT_THEME='Catppuccin Mocha'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -61,6 +62,26 @@ setopt IGNORE_EOF
 # Bindkeys
 #
 
+# Ctrl+W を / で止まるように
+backward-kill-to-slash() {
+  local WORDCHARS="${WORDCHARS:s/\//}"
+  local last="${LBUFFER[-1]}"
+
+  if [[ "$last" == [[:alnum:]] ]] || [[ "${WORDCHARS}" == *"$last"* ]]; then
+    zle backward-kill-word
+  else
+    local i=${#LBUFFER}
+    while (( i > 0 )); do
+      local c="${LBUFFER[i]}"
+      [[ "$c" == [[:alnum:]] ]] || [[ "${WORDCHARS}" == *"$c"* ]] && break
+      (( i-- ))
+    done
+    LBUFFER="${LBUFFER[1,i]}"
+  fi
+}
+zle -N backward-kill-to-slash
+bindkey '^W' backward-kill-to-slash
+
 #
 # Autoloads
 #
@@ -68,6 +89,21 @@ setopt IGNORE_EOF
 autoload -Uz bracketed-paste-url-magic
 zle -N bracketed-paste bracketed-paste-url-magic
 autoload -Uz zmv
+
+#
+# Completions
+#
+
+_python_m_complete() {
+    local cur="${words[CURRENT]}"
+    if [[ "${words[CURRENT-1]}" == "-m" ]]; then
+        local path_prefix="${cur//.//}"
+        local matches=($(find . -path "./${path_prefix}*" \( -name "*.py" -o -type d \) 2>/dev/null \
+            | sed 's|^\./||; s|\.py$||; s|/|.|g' \
+            | grep -v '__'))
+        compadd -a matches
+    fi
+}
 
 #
 # Aliases
