@@ -32,6 +32,7 @@
 
   // Keymap
   "base_keymap": "VSCode",
+  "vim_mode": true,
 
   // Editor
   "autosave": "on_focus_change",
@@ -64,6 +65,11 @@
         }
       }
     }
+  },
+  "file_types": {
+    "JSONC": ["**/zed/**/*.json"],
+    "Shell Script": [".env.*", "dot_zshrc"],
+    "TOML": ["config", "conf"]
   },
   "languages": {
     "Python": {
