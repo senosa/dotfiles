@@ -140,11 +140,11 @@
           },
           "cursor-line": {
             "color": "$blue",
-            "background-color": "$surface1"
+            "background-color": "$surface0"
           },
           "disabled-cursor-line": {
             "color": "$subtext0",
-            "background-color": "$surface0"
+            "background-color": "$surface1"
           },
           "adjusted-time": {
             "color": "Maroon"
