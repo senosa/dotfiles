@@ -1,14 +1,14 @@
 [[plugin.deps]]
-use = "yazi-rs/plugins:full-border"
-rev = "5d5c480"
-hash = "7b625412411be411153886894d9acaf"
+use = "yazi-rs/plugins:toggle-pane"
+rev = "598cdb6"
+hash = "9c7987da2d2a2120dac33abb64132004"
 
 [[plugin.deps]]
-use = "yazi-rs/plugins:toggle-pane"
-rev = "5d5c480"
-hash = "9c7987da2d2a2120dac33abb64132004"
+use = "yazi-rs/plugins:smart-enter"
+rev = "598cdb6"
+hash = "187cc58ba7ac3befd49c342129e6f1b6"
 
 [[flavor.deps]]
 use = "yazi-rs/flavors:catppuccin-mocha"
-rev = "54ab389"
+rev = "0f9204b"
 hash = "7dfe41c9c3d9be76da8a844263d0bbed"
