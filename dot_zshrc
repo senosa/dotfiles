@@ -102,6 +102,8 @@ _python_m_complete() {
             | sed 's|^\./||; s|\.py$||; s|/|.|g' \
             | grep -v '__'))
         compadd -a matches
+    else
+        _default
     fi
 }
 
