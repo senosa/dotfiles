@@ -62,6 +62,9 @@ setopt IGNORE_EOF
 # Bindkeys
 #
 
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
+
 # Ctrl+W を / で止まるように
 backward-kill-to-slash() {
   local WORDCHARS="${WORDCHARS:s/\//}"
