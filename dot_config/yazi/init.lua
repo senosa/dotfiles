@@ -1,4 +1,10 @@
 -- ~/.config/yazi/init.lua
+-- Official Git Plugin Setup
+require("git"):setup {
+  order = 500,
+}
+
+-- Custom Linemode Setup
 function Linemode:size_and_mtime()
   local time = math.floor(self._file.cha.mtime or 0)
   if time == 0 then

@@ -5,9 +5,15 @@ linemode = "size_and_mtime"
 [flavor]
 dark = "catppuccin-mocha"
 
+[plugin]
+prepend_fetchers = [
+  { url = "*", run = "git", group = "git" },
+  { url = "*/", run = "git", group = "git" },
+]
+
 [preview]
-max_width = 3840
-max_height = 2160
+max_width = 10000
+max_height = 10000
 image_quality = 85 # Bump from default 75 to 85-90 for sharper retina rendering
 
 [opener]
