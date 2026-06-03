@@ -10,6 +10,9 @@
 [delta]
   navigate = true
   dark = true
+  side-by-side = true
+  width = variable
+  features = catppuccin-mocha
 [merge]
   conflictStyle = zdiff3
 [push]
@@ -22,5 +25,5 @@
 	defaultBranch = main
 [include]
 	path = ~/.config/git/catppuccin.gitconfig
-[delta]
-	features = catppuccin-mocha
+[alias]
+	ac = "!f() { COMMITMSG=$(claude --no-session-persistence --print 'Generate\n  ONLY a one-line Git commit message in Japanese using imperative mood. The message should summarize what\n  was changed and why, based strictly on the contents of `git diff --cached`. DO NOT add an explanation or\n   a body. Output ONLY the commit summary line.'); git commit -m \"$COMMITMSG\" -e; }; f"
