@@ -6,15 +6,13 @@ require("git"):setup {
 
 -- Custom Linemode Setup
 function Linemode:size_and_mtime()
+  local year = os.date("%Y")
   local time = math.floor(self._file.cha.mtime or 0)
-  if time == 0 then
-    time = ""
-  elseif os.date("%Y", time) == os.date("%Y") then
-    time = os.date("%m-%d %H:%M", time)
-  else
-    time = os.date("%m-%d  %Y", time)
-  end
+  local time_str = os.date(os.date("%Y", time) == year and "%m-%d %H:%M" or "%Y-%m-%d ", time)
+  local size_str = self._file:size() and ya.readable_size(self._file:size()) or "-"
 
-  local size = self._file:size()
-  return string.format("%s %s", size and ya.readable_size(size) or "-", time)
+  return ui.Line {
+    ui.Span(size_str .. " "):fg("#a6e3a1"),
+    ui.Span(time_str):fg("#89b4fa"),
+  }
 end
