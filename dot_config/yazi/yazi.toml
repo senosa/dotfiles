@@ -1,6 +1,6 @@
 [mgr]
 sort_by = "natural"
-linemode = "size_and_mtime"
+linemode = "size_mtime"
 
 [flavor]
 dark = "catppuccin-mocha"
@@ -9,6 +9,10 @@ dark = "catppuccin-mocha"
 prepend_fetchers = [
   { url = "*", run = "git", group = "git" },
   { url = "*/", run = "git", group = "git" },
+]
+
+prepend_previewers = [
+  { mime = "text/*",  run = 'piper -- bat --style=numbers,changes --color=always "$1"' },
 ]
 
 [preview]

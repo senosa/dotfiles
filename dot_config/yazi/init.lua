@@ -5,7 +5,7 @@ require("git"):setup {
 }
 
 -- Custom Linemode Setup
-function Linemode:size_and_mtime()
+function Linemode:size_mtime()
   local year = os.date("%Y")
   local time = math.floor(self._file.cha.mtime or 0)
   local time_str = os.date(os.date("%Y", time) == year and "%m-%d %H:%M" or "%Y-%m-%d ", time)

@@ -3,17 +3,18 @@ on   = "<Esc>"
 run  = "close"
 desc = "Cancel input"
 
-[[mgr.prepend_keymap]]
-on   = "T"
-run  = "plugin toggle-pane max-preview"
-desc = "Maximize or restore the preview pane"
+[mgr]
+prepend_keymap = [
+  { on = "T", run = "plugin toggle-pane max-preview", desc = "Maximize or restore the preview pane" },
+  { on = "p", run = "plugin toggle-pane min-preview", desc = "Hide or restore the preview pane" },
+  { on = "<Enter>", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
 
-[[mgr.prepend_keymap]]
-on   = "<Enter>"
-run  = "plugin smart-enter"
-desc = ""
-
-[[mgr.prepend_keymap]]
-on   = ["m", "a"]
-run  = "linemode size_and_mtime"
-desc = "Linemode: size and mtime"
+  { on = [ "m", "a" ], run = "linemode size_mtime", desc = "Linemode: size + mtime" },
+  # Sorting does not override linemode
+  { on = [ ",", "m" ], run = [ "sort mtime --reverse=no" ], desc = "Sort by modified time" },
+  { on = [ ",", "M" ], run = [ "sort mtime --reverse=yes" ], desc = "Sort by modified time (reverse)" },
+  { on = [ ",", "b" ], run = [ "sort btime --reverse=no" ], desc = "Sort by birth time" },
+  { on = [ ",", "B" ], run = [ "sort btime --reverse=yes" ], desc = "Sort by birth time (reverse)" },
+  { on = [ ",", "s" ], run = [ "sort size --reverse=no" ], desc = "Sort by size" },
+  { on = [ ",", "S" ], run = [ "sort size --reverse=yes" ], desc = "Sort by size (reverse)" },
+]
