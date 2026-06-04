@@ -39,7 +39,7 @@ format = '[$user ]($style)'
 [directory]
 style = "bg:mauve fg:base"
 format = "[$path]($style)"
-truncation_length = 3
+truncation_length = 5
 truncation_symbol = "…/"
 
 [directory.substitutions]

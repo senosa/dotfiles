@@ -89,6 +89,7 @@
 
   // Terminal
   "terminal": {
+    "blinking": "on",
     "copy_on_select": true,
     "font_family": "UDEV Gothic NFLG",
     "font_size": 13,

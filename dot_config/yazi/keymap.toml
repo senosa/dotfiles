@@ -12,3 +12,8 @@ desc = "Maximize or restore the preview pane"
 on   = "<Enter>"
 run  = "plugin smart-enter"
 desc = ""
+
+[[mgr.prepend_keymap]]
+on   = ["m", "a"]
+run  = "linemode size_and_mtime"
+desc = "Linemode: size and mtime"
