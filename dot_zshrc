@@ -137,6 +137,7 @@ alias gp='git push'
 alias rm='trash'
 
 alias c='claude'
+alias n='nvim'
 
 #
 # Zstyles
