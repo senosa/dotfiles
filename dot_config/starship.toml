@@ -1,21 +1,21 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](fg:overlay0)\
-$time\
-[ ](fg:overlay0)\
 $username\
 [](fg:mauve)\
 $directory\
-[ ](fg:mauve)\
+[](fg:mauve bg:surface1)\
 $git_branch\
+[](fg:surface1 bg:surface0)\
 $git_status\
+[ ](fg:surface0)\
 
 $python\
 
 $docker_context\
 $conda\
 
+$time\
 $status\
 $cmd_duration\
 $line_break\
@@ -24,12 +24,6 @@ $character"""
 
 palette = 'catppuccin_mocha'
 
-[time]
-disabled = false
-time_format = "%T"
-style = "bg:overlay0 fg:base"
-format = '[  $time]($style)'
-
 [username]
 show_always = false
 style_user = "fg:overlay0"
@@ -37,10 +31,10 @@ style_root = "fg:red"
 format = '[$user ]($style)'
 
 [directory]
-style = "bg:mauve fg:base"
-format = "[$path]($style)"
 truncation_length = 5
 truncation_symbol = "…/"
+style = "bg:mauve fg:base"
+format = "[$path ]($style)"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -51,36 +45,39 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "subtext0"
-format = '[$symbol $branch ]($style)'
+style = "bg:surface1"
+format = '[ $symbol $branch ]($style)'
 
 [git_status]
 ahead = '⇡${count}'
 diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 behind = '⇣${count}'
-style = "fg:teal"
-format = '[[$all_status](fg:bold red)$ahead_behind ]($style)'
+style = "fg:teal bg:surface0"
+format = '[ [$all_status](fg:bold red bg:surface0)$ahead_behind ]($style)'
 
 [python]
 symbol = ""
 style = "fg:overlay0"
 format = '[$symbol( $version)(\($virtualenv\)) ]($style)'
 
+[time]
+disabled = false
+time_format = "%R"
+style = "fg:subtext0"
+format = '[  $time ]($style)'
+
 [status]
+disabled = false
+success_symbol = "[  ]($style)"
+symbol = "[  $status $common_meaning ](fg:red)"
 style = "fg:green"
 format = '[$symbol]($style)'
-disabled = false
-success_symbol = "[ ]($style)"
-symbol = "[  $status $common_meaning](fg:red)"
 
 [cmd_duration]
 show_milliseconds = true
+min_time = 2_000
 style = "fg:subtext0"
-format = "[ $duration]($style)"
-disabled = false
-show_notifications = false
-min_time_to_notify = 45000
-min_time = 100
+format = "[$duration]($style)"
 
 [line_break]
 disabled = false
