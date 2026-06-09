@@ -1,0 +1,58 @@
+{
+	"name": "Vimium C",
+	"@time": "2026/6/9 17:54:51",
+	"time": 1780995291972,
+	"environment": {
+		"extension": "2.12.2",
+		"platform": "mac",
+		"chromium": 148
+	},
+	"allBrowserUrls": true,
+	"exclusionRules": [
+		{
+			"passKeys": "",
+			"pattern": ":https://mail.google.com/"
+		},
+		{
+			"passKeys": "/ ? ",
+			"pattern": ":https://github.com/"
+		},
+		{
+			"passKeys": "",
+			"pattern": ":https://vim-adventures.com/"
+		}
+	],
+	"grabBackFocus": true,
+	"keyLayout": 2,
+	"keyMappings": [
+		"#!no-check",
+		"map J nextTab",
+		"map K previousTab",
+		"map gT nextTab",
+		"map gt previousTab",
+		"",
+		"map <c-f> LinkHints.activate action=\"focus\"",
+		"map <c-g> autoOpen keyword=\"google\"",
+		""
+	],
+	"linkHintCharacters": "hjklasdfgyuiopqwertnmzxcvb",
+	"newTabUrl": "chrome-extension://laookkfknpbbblfpciffpaejjkokdgca/index.html",
+	"nextPatterns": "下一封,下页,下一页,下一章,后一页,下一张,next,more,newer,>,›,→,»,≫,>>,次へ,進む,次のページ",
+	"previousPatterns": "上一封,上页,上一页,上一章,前一页,上一张,prev,previous,back,older,<,‹,←,«,≪,<<,前へ,戻る,前のページ",
+	"userDefinedCss": [
+		".LH, .D>.LH {",
+		"  background: linear-gradient(#1e1e2e, #313244);",
+		"  color: #cdd6f4;",
+		"  border: 0.1px solid #cba6f7;",
+		"}",
+		""
+	],
+	"vimSync": true,
+	"vomnibarOptions": {
+		"actions": "",
+		"maxMatches": 10,
+		"queryInterval": 333,
+		"sizes": "77,3,44,0.8,1944",
+		"styles": "mono-url dark time"
+	}
+}
