@@ -23,12 +23,12 @@ theme = Catppuccin Mocha
 # palette = 14=#6bd7ca
 # palette = 15=#bac2de
 
-background-opacity = 0.97
+# background-opacity = 0.9
 # background-blur = 20
 # background-blur = macos-glass-regular
 background-blur = macos-glass-clear
 split-divider-color = #b4befe
-unfocused-split-opacity = 0.7
+# unfocused-split-opacity = 0.7
 unfocused-split-fill = #11111b
 
 #
