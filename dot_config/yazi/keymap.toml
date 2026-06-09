@@ -11,7 +11,8 @@ prepend_keymap = [
   { on = ["c", "r"], run = "plugin revert-webm", desc = "revert_rename_webm" },
   { on = "<Enter>", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
 
-  { on = [ "m", "a" ], run = "linemode size_mtime", desc = "Linemode: size + mtime" },
+  { on = [ "m", "a" ], run = "linemode size_mtime",      desc = "Linemode: size + mtime (compact)" },
+  { on = [ "m", "A" ], run = "linemode size_mtime_long", desc = "Linemode: size + mtime (long)" },
   # Sorting does not override linemode
   { on = [ ",", "m" ], run = [ "sort mtime --reverse=no" ], desc = "Sort by modified time" },
   { on = [ ",", "M" ], run = [ "sort mtime --reverse=yes" ], desc = "Sort by modified time (reverse)" },

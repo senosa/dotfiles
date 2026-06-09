@@ -6,6 +6,9 @@ inactive = { fg = "#89b4fa", bg = "#313244" }
 normal_main = { fg = "#1e1e2e", bg = "#89b4fa" }
 normal_alt  = { fg = "#89b4fa", bg = "#313244" }
 
+[mgr]
+find_keyword = { fg = "#cdd6f4", bg = "#313244" }
+
 [filetype]
 rules = [
   { url = "*", is = "block", fg = "#74c7ec", bg = "#313244" },
