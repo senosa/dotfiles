@@ -185,7 +185,7 @@ export FZF_DEFAULT_OPTS=$(cat <<'EOF'
 --color=border:#585b70,preview-bg:#1e1e2e,label:#aeaeae,query:#f9e2af
 --border="rounded" --border-label="" --preview-window="border-rounded"
 --prompt="> "
---height 60%
+--height 50%
 --layout reverse
 --bind ctrl-d:preview-page-down,ctrl-u:preview-page-up
 EOF
@@ -197,11 +197,22 @@ export FZF_CTRL_R_OPTS=$(cat <<"EOF"
   | awk "{ sub(/\s*[0-9]*?\s*/, \"\"); gsub(/\\\\n/, \"\\n\"); print }" \
   | bat --color=always --language=sh --style=plain
 '
---preview-window 'down,40%,wrap'
+--preview-window 'down,30%,wrap,border-top'
 EOF
 )
 
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# `nvim <C-t>` などで gitignore されているファイルも検索対象にする。
+# LazyVim 内のファイル検索は gitignore respect のまま。
+export FZF_CTRL_T_COMMAND=$(cat <<"EOF"
+( (type fd > /dev/null) &&
+  fd --type f \
+    --strip-cwd-prefix \
+    --hidden \
+    --no-ignore \
+    --exclude '{.git,node_modules,.venv}/**' ) \
+  || $find_ignore f -print 2> /dev/null
+EOF
+)
 export FZF_CTRL_T_OPTS=$(cat << "EOF"
 --preview '
   ( (type bat > /dev/null) &&
@@ -210,9 +221,15 @@ export FZF_CTRL_T_OPTS=$(cat << "EOF"
       --line-range :200 {} \
     || (cat {} | head -200) ) 2> /dev/null
 '
---preview-window 'down,60%,wrap,+3/2,~3'
+--preview-window 'border-left'
 EOF
 )
+
+export _ZO_FZF_OPTS="${FZF_DEFAULT_OPTS}
+--height 75%
+--no-sort
+--preview 'eza --tree --level=1 --icons=always --color=always {2..}'
+--preview-window 'border-left'"
 
 export FZF_ALT_C_COMMAND=$(cat <<"EOF"
 ( (type fd > /dev/null) &&
