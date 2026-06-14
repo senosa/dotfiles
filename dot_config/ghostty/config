@@ -56,6 +56,7 @@ keybind = ctrl+i=text:\t
 copy-on-select = clipboard
 
 mouse-hide-while-typing = true
+selection-word-chars = " \t'\"│`|:;,()[]{}<>$/"
 
 #
 # OS Specific

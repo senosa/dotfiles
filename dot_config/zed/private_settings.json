@@ -8,7 +8,6 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // General
-  "tab_size": 2,
   "cli_default_open_behavior": "existing_window",
 
   // Appearance
@@ -26,6 +25,10 @@
 
   // Editor
   "autosave": "on_focus_change",
+  "vim": {
+    "toggle_relative_line_numbers": true
+  },
+  "tab_size": 2,
   "soft_wrap": "editor_width",
   "show_whitespaces": "all",
 
