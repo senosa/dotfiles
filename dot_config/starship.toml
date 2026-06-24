@@ -74,7 +74,7 @@ style = "fg:green"
 format = '[$symbol]($style)'
 
 [cmd_duration]
-show_milliseconds = true
+show_milliseconds = false
 min_time = 2_000
 style = "fg:subtext0"
 format = "[$duration]($style)"
