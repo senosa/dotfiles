@@ -1,0 +1,54 @@
+{
+    "$schema": "https://lnav.org/schemas/format-v1.schema.json",
+    "ugoira_pipeline_log": {
+        "title": "Ugoira Pipeline Log",
+        "description": "Log format for ugoira_pipeline .log files",
+        "file-pattern": "ugoira_pipeline.*\\.log$",
+        "regex": {
+            "plain": {
+                "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}[+-]\\d{2}:\\d{2}) (?<level>[A-Z]+) +(?<body>.*)$"
+            }
+        },
+        "level-field": "level",
+        "level": {
+            "error": "ERROR",
+            "warning": "WARN",
+            "info": "INFO"
+        },
+        "value": {
+            "level": {
+                "kind": "string"
+            },
+            "timestamp": {
+                "kind": "string"
+            },
+            "body": {
+                "kind": "string"
+            }
+        },
+        "timestamp-field": "timestamp",
+        "timestamp-format": ["%Y-%m-%dT%H:%M:%S%z"],
+        "sample": [
+            {
+                "line": "2026-05-29T02:29:38+09:00 INFO  fetch_start run_id=20260529-022938",
+                "level": "info"
+            },
+            {
+                "line": "2026-05-29T02:29:38+09:00 WARN  rate_limit_retry run_id=20260529-022938 delay_sec=30.0",
+                "level": "warning"
+            },
+            {
+                "line": "2026-06-23T17:14:06+09:00 ERROR download_worker_done run_id=20260622-022006 worker_id=1 exit_code=4",
+                "level": "error"
+            },
+            {
+                "line": "2026-06-23T17:14:06+09:00 INFO  [fetch] some fetch output line",
+                "level": "info"
+            },
+            {
+                "line": "2026-06-23T17:14:06+09:00 ERROR [download-0] [pixiv][error] NotFoundError: could not be found",
+                "level": "error"
+            }
+        ]
+    }
+}
