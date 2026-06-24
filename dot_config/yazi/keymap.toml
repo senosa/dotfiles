@@ -5,6 +5,7 @@ desc = "Cancel input"
 
 [mgr]
 prepend_keymap = [
+  { on = [ "c", "h" ], run = "shell 'md5 -r \"$@\" | LESS=\"${LESS/-F /}\" less' --block", desc = "md5 of selected" },
   { on = "T", run = "plugin toggle-pane max-preview", desc = "Maximize or restore the preview pane" },
   # { on = "P", run = "plugin toggle-pane min-preview", desc = "Hide or restore the preview pane" },
 
