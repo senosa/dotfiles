@@ -24,6 +24,7 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
 fi
 
 export ENABLE_PROMPT_CACHING_1H=1
+export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 
 if [[ -z "$LANG" ]]; then
   export LANG='ja_JP.UTF-8'
@@ -124,7 +125,7 @@ alias lm='ll -humU -s=mod'  # sorted by modified date, most recent last with hea
 
 alias g='git'
 alias gst='git status'
-alias gss='git status --short'
+alias gss='git status --short --branch'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias ga='git add'
