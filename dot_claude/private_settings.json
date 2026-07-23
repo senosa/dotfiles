@@ -19,9 +19,6 @@
       "Edit(.env*)",
       "Edit(*.pem)",
       "Edit(*.key)",
-      "Write(.env*)",
-      "Write(*.pem)",
-      "Write(*.key)",
       "Read(./.env)",
       "Read(./.env.*)",
       "Read(./secrets/**)"
