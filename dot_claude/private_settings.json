@@ -1,7 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
-    "defaultMode": "plan",
     "allow": [
       "Read",
       "Grep",
@@ -26,7 +25,8 @@
       "Read(./.env)",
       "Read(./.env.*)",
       "Read(./secrets/**)"
-    ]
+    ],
+    "defaultMode": "plan"
   },
   "hooks": {
     "PostToolUse": [
@@ -47,13 +47,13 @@
   },
   "enabledPlugins": {
     "gitkraken-hooks@gitkraken": true,
-    "context7@claude-plugins-official": true,
     "commit-commands@claude-plugins-official": true,
     "superpowers@claude-plugins-official": true,
     "exa@claude-plugins-official": true,
     "claude-md-management@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
-    "codex@openai-codex": true
+    "codex@openai-codex": true,
+    "context7@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "gitkraken": {
