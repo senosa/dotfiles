@@ -28,12 +28,12 @@
     "fastMode": "rgb(166,227,161)",
     "fastModeShimmer": "rgb(88,91,112)",
 
-    "diffAdded": "rgb(166,227,161)",
-    "diffRemoved": "rgb(243,139,168)",
-    "diffAddedDimmed": "rgb(166,227,161)",
-    "diffRemovedDimmed": "rgb(243,139,168)",
-    "diffAddedWord": "rgb(166,227,161)",
-    "diffRemovedWord": "rgb(243,139,168)",
+    "diffAdded": "rgb(57,69,69)",
+    "diffRemoved": "rgb(73,52,71)",
+    "diffAddedDimmed": "rgb(255,0,255)",
+    "diffRemovedDimmed": "rgb(0,255,255)",
+    "diffAddedWord": "rgb(78,99,86)",
+    "diffRemovedWord": "rgb(105,69,89)",
 
     "userMessageBackground": "rgb(49,50,68)",
     "userMessageBackgroundHover": "rgb(69,71,90)",
