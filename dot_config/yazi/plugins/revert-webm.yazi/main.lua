@@ -4,8 +4,8 @@ local SCRIPT = "/Users/sen/src/github.com/senosa/hlib/scripts/revert_rename_webm
 -- ya.sync() 経由で cx（UI スレッド）から選択中ファイルのパスを取得
 local get_paths = ya.sync(function(_)
 	local paths = {}
-	for _, url in pairs(cx.active.selected) do
-		paths[#paths + 1] = tostring(url)
+	for _, file in pairs(cx.active.selected) do
+		paths[#paths + 1] = tostring(file.url)
 	end
 	-- 未選択のときはホバー中ファイルを対象にする
 	if #paths == 0 then
