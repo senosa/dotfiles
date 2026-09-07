@@ -8,6 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   // General
+  "hard_tabs": false,
   "tabs": {
     "file_icons": true,
     "git_status": true
