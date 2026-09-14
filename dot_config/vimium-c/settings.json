@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "2026/6/11 14:17:41",
-	"time": 1781155061733,
+	"@time": "2026/9/14 8:43:05",
+	"time": 1789342985247,
 	"environment": {
 		"extension": "2.12.3",
 		"platform": "mac",
-		"firefox": 151
+		"firefox": 155
 	},
 	"allBrowserUrls": true,
 	"exclusionRules": [
@@ -24,6 +24,14 @@
 		{
 			"passKeys": "",
 			"pattern": ":https://sushida.net/"
+		},
+		{
+			"passKeys": "0 1 2 3 4 5 6 7 8 9 <space> ? N P c f j k l t ",
+			"pattern": ":https://www.youtube.com/"
+		},
+		{
+			"passKeys": "? f j k l ",
+			"pattern": ":https://www.twitch.tv/"
 		}
 	],
 	"grabBackFocus": true,
@@ -36,6 +44,14 @@
 		"map K previousTab",
 		"map gT nextTab",
 		"map gt previousTab",
+		"",
+		"map f LinkHints.activate match=\"a[href],[data-ga4-label='open_options_button'],.charcoal-text-field-input,.charcoal-dropdown-selector-button,.charcoal-modal-dialog\\u0020button,[role=button],button.restore-btn,button[data-click-label='follow']\" clickableOnHost=\"\\\\.google\\\\.com##[role=button]\"",
+		"",
+		"# PikPakだけで button.restore-btn にヒント表示",
+		"# env pikpak host=\"https://mypikpak.com/\"",
+		"# map f runKey expect={\"pikpak\":\"<v-f1>\"} keys=\"<v-f0>\"",
+		"# map <v-f0> LinkHints.activate match=\"a[href],[data-ga4-label='open_options_button'],.charcoal-text-field-input,.charcoal-dropdown-selector-button,.charcoal-modal-dialog\\u0020button,[role=button]\" clickableOnHost=\"\\\\.google\\\\.com##[role=button]\"",
+		"# map <v-f1> LinkHints.activate match=\"a[href],[data-ga4-label='open_options_button'],.charcoal-text-field-input,.charcoal-dropdown-selector-button,.charcoal-modal-dialog\\u0020button,[role=button],button.restore-btn\" clickableOnHost=\"\\\\.google\\\\.com##[role=button]\"",
 		"",
 		"# 左手 d, s だけで上下スクロール",
 		"map s scrollPageUp",
@@ -50,11 +66,13 @@
 	"nextPatterns": "下一封,下页,下一页,下一章,后一页,下一张,next,more,newer,>,›,→,»,≫,>>,次へ,進む,次のページ",
 	"previousPatterns": "上一封,上页,上一页,上一章,前一页,上一张,prev,previous,back,older,<,‹,←,«,≪,<<,前へ,戻る,前のページ",
 	"userDefinedCss": [
+		"/*",
 		".LH, .D>.LH {",
 		"  background: linear-gradient(#1e1e2e, #313244);",
 		"  color: #cdd6f4;",
 		"  border: 0.1px solid #cba6f7;",
 		"}",
+		"*/",
 		""
 	],
 	"vimSync": true,
