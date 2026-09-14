@@ -5,7 +5,6 @@
       "Read",
       "Grep",
       "Glob",
-      "Bash(npm run *)",
       "Bash(yarn *)",
       "Bash(pnpm *)",
       "Bash(git status)",
@@ -69,6 +68,41 @@
   "language": "Japanese",
   "tui": "fullscreen",
   "theme": "custom:catppuccin-mocha",
+  "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "agentPushNotifEnabled": true
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Bash(git push --force*) in senosa/hlib",
+      "Bash(git branch -D *) in senosa/hlib",
+      "Bash(rm -rf *) in senosa/hlib"
+    ],
+    "environment": [
+      "### Org-wide",
+      "**Organization**: None configured",
+      "**Cloud provider(s)**: None configured",
+      "**Repository visibility**: Private — senosa/hlib (confirmed via gh)",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: Local files/env only — `.env`, `.envrc`, `.streamlit/secrets.toml` (gitignored) and macOS Keychain (`com.sen.hlib.transmission`) per README",
+      "**Default / protected branches**: `main` is the default branch; no classic protected branches listed and rulesets not queryable here — do not treat as unprotected on that basis alone",
+      "**CI/CD deploy targets**: None configured",
+      "**Network posture**: None configured",
+      "**Host containment**: None configured — assume Claude Code runs on an ordinary developer machine with open internet",
+      "**Source control**: The trusted repo (senosa/hlib) and its `origin` remote (github.com:senosa/hlib.git) only",
+      "**Trusted internal domains**: None configured",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: None configured",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: `.env`, `.env.sample`, `.envrc`, `.streamlit/secrets.toml`, `src/shared/transmission_credentials.py`, `tests/test_transmission_credentials.py` — credentials (Pixiv login, Discord webhooks, Transmission RPC password) — share only with audiences cleared at the [named+specifics] bar",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment",
+      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development — personal media acquisition/organization pipeline (E-hentai, Pixiv/ugoira, Eagle, Transmission)",
+      "**Trusted repo**: /Users/sen/src/github.com/senosa/hlib (private, remote `origin` = github.com:senosa/hlib.git) — confidential material (secrets, personal data) is never cleared into it by visibility alone",
+      "**Org-specific CLIs**: None configured — project uses `uv` (routine, this repo) and `gh` for GitHub operations",
+      "routine under /Users/sen/src/github.com/senosa/hlib/ prefix: `uv run`, `git worktree` management, `gh issue view` — per dev-flow-start skill conventions"
+    ]
+  }
 }
