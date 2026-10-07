@@ -52,6 +52,7 @@ setopt AUTO_CD AUTO_PUSHD PUSHD_IGNORE_DUPS PUSHD_SILENT PUSHD_TO_HOME
 setopt EXTENDED_GLOB
 unsetopt CLOBBER    # Do not overwrite existing files with > and >>.
                     # Use >! and >>! to bypass.
+setopt APPEND_CREATE  # Allow >> to create new files (needed by cmux terminal history).
 
 setopt COMPLETE_IN_WORD ALWAYS_TO_END PATH_DIRS AUTO_MENU AUTO_LIST
 setopt AUTO_PARAM_SLASH EXTENDED_GLOB NO_BEEP
