@@ -45,7 +45,7 @@
 		"map gT nextTab",
 		"map gt previousTab",
 		"",
-		"map f LinkHints.activate match=\"a[href],[data-ga4-label='open_options_button'],.charcoal-text-field-input,.charcoal-dropdown-selector-button,.charcoal-modal-dialog\\u0020button,[role=button],button.restore-btn,button[data-click-label='follow']\" clickableOnHost=\"\\\\.google\\\\.com##[role=button]\"",
+		"map f LinkHints.activate match=\"a[href],[data-ga4-label='open_options_button'],.charcoal-text-field-input,.charcoal-dropdown-selector-button,.charcoal-modal-dialog\\u0020button,[role=button],button.restore-btn,button[data-click-label='follow'],button.gm-profile-work-list-tag-filter-click\" clickableOnHost=\"\\\\.google\\\\.com##[role=button]\"",
 		"",
 		"# PikPakだけで button.restore-btn にヒント表示",
 		"# env pikpak host=\"https://mypikpak.com/\"",
